@@ -12,9 +12,17 @@ export default class MyDocument extends Document {
 					<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
 					{/* PWA primary color */}
 					<meta name="theme-color" content={theme.palette.primary.main} />
+					<link rel="shortcut icon" href="./img/favicon.ico" />
+					<link rel="icon" type="image/png" href="./img/favicon.png" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" type="text/css" />
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" type="text/css" />
+					<meta
+						name="keywords"
+						content="startup studio,startup,enterpreneur,venture builder,company builder,parallel entrepreneurship,html,html5,html 5,css,css3,css 3,json,api,web development,javascript,angularjs,angular js,reactjs,react js,redis,mongodb,postgresql,postgres,python,game development,mobile,responsive,php,amazon,android,linux,open source"
+					/>
 				</Head>
-				<body>
+				<body itemScope itemType="http://schema.org/LocalBusiness">
 					<Main />
 					<NextScript />
 				</body>
