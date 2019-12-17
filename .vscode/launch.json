@@ -16,6 +16,13 @@
 			"webRoot": "${workspaceFolder}"
 		},
 		{
+			"type": "firefox",
+			"request": "attach",
+			"name": "Next: Attach Firefox",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
 			"type": "node",
 			"request": "launch",
 			"name": "Next: Node",
