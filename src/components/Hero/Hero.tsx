@@ -7,42 +7,49 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useTranslation } from 'components/i18n';
 
-const Hero: React.FunctionComponent = ({}): JSX.Element => {
-	const classes = useStyles();
-	const i18n = useTranslation('common');
+import HeroLayout from './HeroLayout';
 
+type HeroProps = {
+	backgroundImage?: string;
+	backgroundColor?: string;
+};
+
+const Hero: React.FunctionComponent<HeroProps> = ({ children, backgroundImage, backgroundColor }): JSX.Element => {
+	const classes = useStyles({ backgroundImage, backgroundColor });
+	const i18n = useTranslation('common');
+	console.log(backgroundColor);
 	return (
-		<section>
-			<Container maxWidth="sm" component="main" className={classes.heroContent}>
-				<Link itemProp="url" variant="subtitle1" color="textPrimary" href="#about-us" className={classes.link}>
-					<img itemProp="logo" src="./img/logo-brand.png" />
-				</Link>
-				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom itemProp="name">
-					<Typography variant="body1" display="inline" color="inherit" noWrap className={classes.titleVariant}>
-						khem
-					</Typography>
-					<Typography variant="body1" display="inline" color="inherit" noWrap className={classes.titleRed}>
-						labs
-					</Typography>
-				</Typography>
-			</Container>
-		</section>
+		<HeroLayout backgroundClassName={classes.background}>
+			{/* Increase the network loading priority of the background image. */}
+			{backgroundImage && <img style={{ display: 'none' }} src={backgroundImage} alt="increase priority" />}
+			{children}
+		</HeroLayout>
 	);
 };
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		heroContent: {
-			padding: theme.spacing(8, 0, 6)
+		background: {
+			backgroundImage: (props: any): string => {
+				console.log(props.backgroundColor);
+				return props.backgroundImage ? `url(${props.backgroundImage})` : '';
+			},
+			backgroundColor: (props: any): string =>
+				props.backgroundColor ? `${props.backgroundColor}` : theme.palette.background.paper, // Average color of the background image.
+			backgroundPosition: 'center'
 		},
-		link: {
-			margin: theme.spacing(1, 1.5)
+		button: {
+			minWidth: 200
 		},
-		titleVariant: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
+		h5: {
+			marginBottom: theme.spacing(4),
+			marginTop: theme.spacing(4),
+			[theme.breakpoints.up('sm')]: {
+				marginTop: theme.spacing(10)
+			}
 		},
-		titleRed: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark
+		more: {
+			marginTop: theme.spacing(2)
 		}
 	})
 );

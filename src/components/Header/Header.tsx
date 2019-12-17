@@ -70,10 +70,10 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontFamily: 'Ubuntu'
 		},
 		titleVariant: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
+			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark
 		},
 		titleRed: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark
+			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
 		},
 		link: {
 			margin: theme.spacing(1, 1.5)
