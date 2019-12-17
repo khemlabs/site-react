@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
 					{/* PWA primary color */}
 					<meta name="theme-color" content={theme.palette.primary.main} />
 					<link rel="shortcut icon" href="./img/favicon.ico" />
-					<link rel="icon" type="image/png" href="./img/favicon.png" />
+					<link rel="icon" type="image/png" href="./assets/favicon.png" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" type="text/css" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" type="text/css" />

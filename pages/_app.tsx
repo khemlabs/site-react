@@ -20,7 +20,7 @@ class MyApp extends App {
 		return (
 			<React.Fragment>
 				<Head>
-					<title>My page</title>
+					<title>Khem Labs - Development Company</title>
 				</Head>
 				<Theme>
 					{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
