@@ -19,7 +19,7 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 	const i18n = useTranslation('common');
 
 	return (
-		<Container component="section" className={classes.root}>
+		<Container maxWidth={'xl'} component="section" className={classes.root}>
 			<Hero>
 				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom itemProp="name">
 					<Link
