@@ -15,7 +15,7 @@ import CompanyProducts from 'components/sections/CompanyProducts';
 import CompanyAbout from 'components/sections/CompanyAbout';
 import CompanyServices from 'components/sections/CompanyServices';
 import CompanyExpertise from 'components/sections/CompanyExpertise';
-import CompanyClients from 'components/sections/CompanyClients';
+import CompanyPortfolio from 'components/sections/CompanyPortfolio';
 import CompanyContact from 'components/sections/CompanyContact';
 import CompanyTeam from 'components/sections/CompanyTeam/CompanyTeam';
 
@@ -54,8 +54,8 @@ export default function Index(): JSX.Element {
 				<CompanyProducts />
 				<CompanyTeam />
 				<CompanyServices />
+				<CompanyPortfolio />
 				<CompanyExpertise />
-				<CompanyClients />
 				<CompanyContact />
 			</Container>
 			<Footer />
