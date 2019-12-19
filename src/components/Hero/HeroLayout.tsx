@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
 			marginBottom: theme.spacing(14),
 			display: 'flex',
 			flexDirection: 'column',
-			alignItems: 'center'
+			alignItems: 'center',
+			zIndex: 1
 		},
 		backdrop: {
 			position: 'absolute',

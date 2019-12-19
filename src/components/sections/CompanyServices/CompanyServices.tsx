@@ -25,7 +25,6 @@ const CompanyServices: React.FunctionComponent = ({}): JSX.Element => {
 				itemScope
 				itemType="http://schema.org/OfferCatalog"
 			>
-				{/* <img src="./assets/img/backgrounds/net-light.jpg" className={classes.curvyLines} alt="curvy lines" /> */}
 				<Typography variant="h2" className={classes.title}>
 					{i18n.t('menu_services')}
 				</Typography>
@@ -87,29 +86,6 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		title: {
 			marginBottom: theme.spacing(14)
-		},
-		number: {
-			fontSize: 24,
-			fontFamily: theme.typography.fontFamily,
-			color: theme.palette.secondary.main,
-			fontWeight: theme.typography.fontWeightMedium
-		},
-		image: {
-			height: 55,
-			marginTop: theme.spacing(4),
-			marginBottom: theme.spacing(4)
-		},
-		curvyLines: {
-			pointerEvents: 'none',
-			position: 'absolute',
-			top: -180,
-			opacity: 0.7
-		},
-		media: {
-			height: 400
-		},
-		cardBackground: {
-			backgroundColor: theme.palette.common.white
 		}
 	})
 );

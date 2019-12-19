@@ -1,5 +1,5 @@
 import CompanyAbout from './CompanyAbout';
-import CompanyClients from './CompanyClients';
+import CompanyPortfolio from './CompanyPortfolio';
 import CompanyConsole from './CompanyConsole';
 import CompanyContact from './CompanyContact';
 import CompanyExpertise from './CompanyExpertise';
@@ -10,7 +10,7 @@ import CompayHero from './CompayHero';
 
 export {
 	CompanyAbout,
-	CompanyClients,
+	CompanyPortfolio,
 	CompanyConsole,
 	CompanyContact,
 	CompanyExpertise,

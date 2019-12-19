@@ -3,6 +3,7 @@ import React, { Props } from 'react';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import ChevronIcon from '@material-ui/icons/ChevronRightRounded';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useTranslation } from 'components/i18n';
@@ -17,12 +18,13 @@ type HeroProps = {
 const Hero: React.FunctionComponent<HeroProps> = ({ children, backgroundImage, backgroundColor }): JSX.Element => {
 	const classes = useStyles({ backgroundImage, backgroundColor });
 	const i18n = useTranslation('common');
-	console.log(backgroundColor);
+	console.log(backgroundImage);
 	return (
 		<HeroLayout backgroundClassName={classes.background}>
 			{/* Increase the network loading priority of the background image. */}
 			{backgroundImage && <img style={{ display: 'none' }} src={backgroundImage} alt="increase priority" />}
 			{children}
+			{backgroundImage && <ChevronIcon className={classes.arrow} />}
 		</HeroLayout>
 	);
 };
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		background: {
 			backgroundImage: (props: any): string => {
-				console.log(props.backgroundColor);
+				console.log(props.backgroundImage);
 				return props.backgroundImage ? `url(${props.backgroundImage})` : '';
 			},
 			backgroundColor: (props: any): string =>
@@ -50,6 +52,11 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		more: {
 			marginTop: theme.spacing(2)
+		},
+		arrow: {
+			position: 'absolute',
+			bottom: theme.spacing(4),
+			transform: 'rotate(90deg)'
 		}
 	})
 );

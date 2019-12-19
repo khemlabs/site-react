@@ -20,7 +20,7 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 
 	return (
 		<Container maxWidth={'xl'} component="section" className={classes.root}>
-			<Hero>
+			<Hero backgroundImage="./assets/img/team-2.jpg">
 				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom itemProp="name">
 					<Link
 						itemProp="url"
@@ -36,10 +36,10 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 						<strong className={classes.titleRed}>labs</strong>
 					</span>
 				</Typography>
-				<Typography variant="h5" align="center" color="textPrimary" gutterBottom>
+				<Typography variant="h5" align="center" gutterBottom>
 					{i18n.t('khemlabs_frase')}
 				</Typography>
-				<Typography variant="body2" align="center" color="textPrimary" gutterBottom>
+				<Typography variant="body2" align="center" gutterBottom>
 					<Link itemProp="sameAs" href="https://github.com/khemlabs" target="_blank">
 						<GitHubIcon />
 					</Link>
@@ -61,8 +61,8 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
-			color: theme.palette.type == 'light' ? theme.palette.common.black : theme.palette.common.black,
-			backgroundColor: theme.palette.type == 'light' ? theme.palette.common.white : theme.palette.common.black,
+			color: theme.palette.type == 'light' ? theme.palette.common.white : theme.palette.common.black,
+			// backgroundColor: theme.palette.type == 'light' ? theme.palette.common.white : theme.palette.common.black,
 			position: 'relative',
 			display: 'flex',
 			alignItems: 'center',
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			margin: theme.spacing(1, 1.5)
 		},
 		titleVariant: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.dark : theme.palette.secondary.light
+			color: theme.palette.type === 'light' ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText
 		},
 		titleRed: {
 			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
