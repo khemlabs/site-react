@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import Modal from 'components/Modal';
@@ -20,21 +20,32 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-export default function PortfolioModal() {
+const modalReducer = (state: any, action: any) => {
+	switch (action.type) {
+		case 'open':
+			return { open: true };
+		case 'close':
+			return { open: false };
+	}
+};
+
+export const usePortfolioModal = () => {
+	const reducer: any = useReducer(modalReducer, { open: false });
+
+	return reducer;
+};
+
+const PortfolioModal: React.FunctionComponent = (): JSX.Element => {
 	const classes = useStyles();
-	const [open, setOpen] = React.useState(false);
-
-	const handleOpen = () => {
-		setOpen(true);
-	};
-
-	const handleClose = () => {
-		setOpen(false);
-	};
+	const [{ open }, dispatch] = usePortfolioModal();
 
 	return (
-		<Container>
-			<img src="./assets/img/portfolio/ozono/Ozono-1.jpg" />
-		</Container>
+		<Modal open={open} onClose={() => dispatch({ type: 'close' })}>
+			<Container>
+				<img src="./assets/img/portfolio/ozono/Ozono1.jpg" width="300" />
+			</Container>
+		</Modal>
 	);
-}
+};
+
+export default PortfolioModal;

@@ -1,3 +1,3 @@
-import PortfolioModal from './PortfolioModal';
+import PortfolioModal, { usePortfolioModal } from './PortfolioModal';
 
-export { PortfolioModal as default };
+export { PortfolioModal as default, usePortfolioModal };

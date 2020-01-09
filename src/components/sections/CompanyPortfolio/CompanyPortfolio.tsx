@@ -1,83 +1,183 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { useTransition, animated } from 'react-spring';
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Box from '@material-ui/core/Box';
 
 import { useTranslation } from 'components/i18n';
+import Modal from 'components/Modal';
+//import PortfolioModal, { usePortfolioModal } from 'components/modals/PortfolioModal';
+
+const images = [
+	{
+		url: './assets/img/portfolio/radiod/RadioD-1.png',
+		title: 'Radio Disney',
+		width: '20%',
+		screenshots: [
+			'./assets/img/portfolio/radiod/RadioD-1.png',
+			'./assets/img/portfolio/radiod/RadioD-2.png',
+			'./assets/img/portfolio/radiod/RadioD-3.png',
+			'./assets/img/portfolio/radiod/RadioD-4.png',
+			'./assets/img/portfolio/radiod/RadioD-5.png',
+			'./assets/img/portfolio/radiod/RadioD-6.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/ozono/Ozono1.png',
+		title: 'Ozono',
+		width: '40%',
+		screenshots: [
+			'./assets/img/portfolio/ozono/Ozono1.png',
+			'./assets/img/portfolio/ozono/Ozono2.png',
+			'./assets/img/portfolio/ozono/Ozono3.png',
+			'./assets/img/portfolio/ozono/Ozono4.png',
+			'./assets/img/portfolio/ozono/Ozono5.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/fuerzaglobal/Fuerzaglobal-1.png',
+		title: 'Fuerza bruta',
+		width: '40%',
+		screenshots: [
+			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-1.png',
+			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-2.png',
+			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-3.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/comicopolis/Comicopolis-1.png',
+		title: 'Comicopolis',
+		width: '38%',
+		screenshots: [
+			'./assets/img/portfolio/comicopolis/Comicopolis-1.png',
+			'./assets/img/portfolio/comicopolis/Comicopolis-2.png',
+			'./assets/img/portfolio/comicopolis/Comicopolis-3.png',
+			'./assets/img/portfolio/comicopolis/Comicopolis-4.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/bonaparte/sigpa1.png',
+		title: 'Hospital Bonaparte',
+		width: '38%',
+		screenshots: [
+			'./assets/img/portfolio/bonaparte/sigpa1.png',
+			'./assets/img/portfolio/bonaparte/sigpa2.png',
+			'./assets/img/portfolio/bonaparte/sigpa3.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/bear/Bear1.png',
+		title: 'Design Bear',
+		width: '24%',
+		screenshots: [
+			'./assets/img/portfolio/bear/Bear1.png',
+			'./assets/img/portfolio/bear/Bear2.png',
+			'./assets/img/portfolio/bear/Bear7.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/oxigeno/Oxigeno-1.png',
+		title: 'Oxigeno',
+		width: '40%',
+		screenshots: ['./assets/img/portfolio/oxigeno/Oxigeno-1.png']
+	},
+	{
+		url: './assets/img/portfolio/jornadas/Jornadas-1.png',
+		title: 'Jornadas de Salud',
+		width: '20%',
+		screenshots: [
+			'./assets/img/portfolio/jornadas/Jornadas-1.png',
+			'./assets/img/portfolio/jornadas/Jornadas-2.png',
+			'./assets/img/portfolio/jornadas/Jornadas-3.png',
+			'./assets/img/portfolio/jornadas/Jornadas-4.png',
+			'./assets/img/portfolio/jornadas/Jornadas-5.png',
+			'./assets/img/portfolio/jornadas/Jornadas-6.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/worcket/Worcket-1.png',
+		title: 'Workcet',
+		width: '20%',
+		screenshots: [
+			'./assets/img/portfolio/worcket/Worcket-1.png',
+			'./assets/img/portfolio/worcket/Worcket-2.png',
+			'./assets/img/portfolio/worcket/Worcket-3.png',
+			'./assets/img/portfolio/worcket/Worcket-4.png'
+		]
+	},
+	{
+		url: './assets/img/portfolio/quickicks/Quickicks-1.png',
+		title: 'Quickicks',
+		width: '20%',
+		screenshots: [
+			'./assets/img/portfolio/quickicks/Quickicks-1.png',
+			'./assets/img/portfolio/quickicks/Quickicks-2.png',
+			'./assets/img/portfolio/quickicks/Quickicks-3.png',
+			'./assets/img/portfolio/quickicks/Quickicks-4.png'
+		]
+	}
+];
+
+// const pages = images.map(image => {
+// 	image.screenshots.map(screenshots => ({ style }: any) => (
+// 		<animated.div style={style}>
+// 			<img src={screenshots} />
+// 		</animated.div>
+// 	));
+// });
 
 const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
+	// const [{}, dispatch] = usePortfolioModal();
 
-	const images = [
-		{
-			url: './assets/img/portfolio/radiod/RadioD-1.png',
-			title: 'Radio Disney',
-			width: '20%'
-		},
-		{
-			url: './assets/img/portfolio/ozono/Ozono1.png',
-			title: 'Ozono',
-			width: '40%'
-		},
-		{
-			url: './assets/img/portfolio/fuerzaglobal/Fuerzaglobal-1.png',
-			title: 'Fuerza bruta',
-			width: '40%'
-		},
-		{
-			url: './assets/img/portfolio/comicopolis/Comicopolis-1.png',
-			title: 'Comicopolis',
-			width: '38%'
-		},
-		{
-			url: './assets/img/portfolio/bonaparte/sigpa1.png',
-			title: 'Hospital Bonaparte',
-			width: '38%'
-		},
-		{
-			url: './assets/img/portfolio/bear/Bear1.png',
-			title: 'Design Bear',
-			width: '24%'
-		},
-		{
-			url: './assets/img/portfolio/oxigeno/Oxigeno-1.png',
-			title: 'Oxigeno',
-			width: '40%'
-		},
-		{
-			url: './assets/img/portfolio/jornadas/Jornadas-1.png',
-			title: 'Jornadas de Salud',
-			width: '20%'
-		},
-		{
-			url: './assets/img/portfolio/worcket/Worcket-1.png',
-			title: 'Workcet',
-			width: '20%'
-		},
-		{
-			url: './assets/img/portfolio/quickicks/Quickicks-1.png',
-			title: 'Quickicks',
-			width: '20%'
-		}
-	];
+	const [open, setOpen] = useState(false);
+	const [gallery, setGallery] = useState(0);
+
+	const handleOpen = (index: number) => {
+		console.log('open modal');
+		setGallery(index);
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
+
+	const [index, set] = useState(0);
+	const onClick = useCallback(() => set(state => (state + 1) % 3), []);
+
+	const transitions = useTransition(index, p => p, {
+		from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+		enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+		leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
+	});
+
+	const pages = images[gallery].screenshots.map(screenshot => ({ style }: any) => (
+		<animated.div className={classes.transitionMain} style={style}>
+			<img src={screenshot} height="500" />
+		</animated.div>
+	));
 
 	return (
-		<Container className={classes.root} component="section">
-			<Typography variant="h4" align="center" component="h2">
-				Portfolio
+		<Container id="portfolio" className={classes.root} component="section">
+			<Typography variant="h2" className={classes.title}>
+				{i18n.t('menu_portfolio')}
 			</Typography>
+
 			<div className={classes.images}>
-				{images.map(image => (
+				{images.map((image, index) => (
 					<ButtonBase
 						key={image.title}
 						className={classes.imageWrapper}
 						style={{
 							width: image.width
 						}}
+						onClick={() => handleOpen(index)}
 					>
 						<div
 							className={classes.imageSrc}
@@ -95,6 +195,20 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 					</ButtonBase>
 				))}
 			</div>
+			<Modal open={open} onClose={handleClose}>
+				<Box className={classes.transitionContainer}>
+					{images[gallery].screenshots.length > 1 ? (
+						<div className={classes.transitionMain} onClick={onClick}>
+							{transitions.map(({ item, props, key }) => {
+								const Page = pages[item];
+								return <Page key={key} style={props} />;
+							})}
+						</div>
+					) : (
+						<img src={images[gallery].screenshots[0]} height="500" />
+					)}
+				</Box>
+			</Modal>
 		</Container>
 	);
 };
@@ -177,6 +291,41 @@ const useStyles = makeStyles((theme: Theme) =>
 			bottom: -2,
 			left: 'calc(50% - 9px)',
 			transition: theme.transitions.create('opacity')
+		},
+		modal: {
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center'
+		},
+		paper: {
+			backgroundColor: theme.palette.background.paper,
+			border: '2px solid #000',
+			boxShadow: theme.shadows[5],
+			padding: theme.spacing(2, 4, 3)
+		},
+		transitionContainer: {
+			position: 'relative'
+			// width: '80vw',
+			// height: '80vh'
+		},
+		transitionMain: {
+			cursor: 'pointer',
+			position: 'absolute',
+			width: '100%',
+			height: '100%',
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			color: 'white',
+			fontWeight: 800,
+			fontSize: '25em',
+			willChange: 'transform, opacity',
+			textShadow: '0px 2px 40px #00000020, 0px 2px 5px #00000030'
+		},
+		title: {
+			marginBottom: theme.spacing(14),
+			color: theme.palette.primary.contrastText,
+			textAlign: 'center'
 		}
 	})
 );
