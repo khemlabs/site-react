@@ -7,7 +7,8 @@ const NextI18NextInstance = new NextI18Next({
 	localeSubpaths: {
 		en: 'en',
 		es: 'es'
-	}
+	},
+	ignoreRoutes: ['/_next/', '/static/', '/public/', '/api/']
 });
 
 export default NextI18NextInstance;
