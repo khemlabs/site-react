@@ -18,7 +18,7 @@ const CompanyServices: React.FunctionComponent = ({}): JSX.Element => {
 	const i18n = useTranslation('common');
 
 	return (
-		<Container id="#services" maxWidth="xl" component="section" className={classes.root}>
+		<Container id="services" maxWidth="xl" component="section" className={classes.root}>
 			<Container
 				className={classes.container}
 				itemProp="hasOfferCatalog"

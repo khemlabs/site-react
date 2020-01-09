@@ -16,7 +16,7 @@ const CompanyTeam: React.FunctionComponent = ({}): JSX.Element => {
 	const i18n = useTranslation('common');
 
 	return (
-		<Container maxWidth="xl" component="section" className={classes.root}>
+		<Container id="team" maxWidth="xl" component="section" className={classes.root}>
 			<Container className={classes.content}>
 				<Grid container spacing={5} justify="center">
 					<Grid item xs={12} md={4} itemProp="founder" itemScope itemType="http://schema.org/Person">

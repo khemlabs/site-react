@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
+import Modal, { ModalProps } from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Box from '@material-ui/core/Box';
@@ -21,17 +21,8 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-export default function TransitionsModal(children: React.ReactNode): JSX.Element {
+const TransitionsModal: React.FunctionComponent<ModalProps> = ({ children, open, onClose }) => {
 	const classes = useStyles();
-	const [open, setOpen] = React.useState(false);
-
-	const handleOpen = () => {
-		setOpen(true);
-	};
-
-	const handleClose = () => {
-		setOpen(false);
-	};
 
 	return (
 		<Modal
@@ -39,7 +30,7 @@ export default function TransitionsModal(children: React.ReactNode): JSX.Element
 			aria-describedby="transition-modal-description"
 			className={classes.modal}
 			open={open}
-			onClose={handleClose}
+			onClose={onClose}
 			closeAfterTransition
 			BackdropComponent={Backdrop}
 			BackdropProps={{
@@ -51,4 +42,6 @@ export default function TransitionsModal(children: React.ReactNode): JSX.Element
 			</Fade>
 		</Modal>
 	);
-}
+};
+
+export default TransitionsModal;

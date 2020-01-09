@@ -27,7 +27,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	};
 
 	return (
-		<Container maxWidth="xl" className={classes.root} component="section">
+		<Container id="contact" maxWidth="xl" className={classes.root} component="section">
 			<Container className={classes.container}>
 				<Grid container>
 					<Grid item xs={12} md={6} className={classes.cardWrapper}>

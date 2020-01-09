@@ -40,7 +40,7 @@ const CompanyProducts: React.FunctionComponent = ({}): JSX.Element => {
 	];
 
 	return (
-		<Container component="section" className={classes.content}>
+		<Container id="products" component="section" className={classes.content}>
 			<CardsShowcase cards={products} />
 		</Container>
 	);

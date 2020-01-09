@@ -3,7 +3,11 @@ import NextI18Next from 'next-i18next';
 const NextI18NextInstance = new NextI18Next({
 	localePath: 'src/locales',
 	defaultLanguage: 'en',
-	otherLanguages: ['es']
+	otherLanguages: ['es'],
+	localeSubpaths: {
+		en: 'en',
+		es: 'es'
+	}
 });
 
 export default NextI18NextInstance;
