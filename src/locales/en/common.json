@@ -38,7 +38,10 @@
 	"name_contact": "Name",
 	"company_contact": "Company",
 	"email_contact": "Email",
+	"email_placeholder": "Your email",
 	"message_contact": "Message",
+	"message_description": "Please complete your email and message to contact us.",
+	"message_thanks": "Thanks!, Our team will contact you soon.",
 	"send_contact": "Send",
 	"menu_company": "menu_company",
 	"error-with-status": "Ooops! something is not where it should be"

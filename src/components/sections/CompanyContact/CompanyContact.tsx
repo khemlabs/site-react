@@ -11,15 +11,32 @@ import Button from '@material-ui/core/Button';
 
 import { useTranslation } from 'components/i18n';
 
+// Example POST method implementation:
+async function postData(url = '', data = {}) {
+	// Default options are marked with *
+	const response = await fetch(url, {
+		method: 'POST', // *GET, POST, PUT, DELETE, etc.
+
+		body: JSON.stringify(data) // body data type must match "Content-Type" header
+	});
+	return await response.json(); // parses JSON response into native JavaScript objects
+}
+
 const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
 
 	const [open, setOpen] = useState(false);
+	const [message, setMessage] = useState({ email: '', body: '' });
 
-	const handleSubmit = (event: any) => {
+	const handleSubmit = async (event: any) => {
 		event.preventDefault();
-		setOpen(true);
+		try {
+			await postData('/api/messages', message);
+			setOpen(true);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	const handleClose = () => {
@@ -36,15 +53,23 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 								<Typography variant="h2" component="h2" gutterBottom>
 									{i18n.t('menu_contact')}
 								</Typography>
-								<Typography variant="h5">Please complete your email and message to contact us.</Typography>
-								<TextField className={classes.textField} label={i18n.t('email_contact')} placeholder="Your email" />
+								<Typography variant="h5">{i18n.t('message_description')}</Typography>
+								<TextField
+									className={classes.textField}
+									name="email"
+									label={i18n.t('email_contact')}
+									placeholder={i18n.t('email_placeholder')}
+									onChange={event => setMessage({ ...message, email: event.currentTarget.value })}
+								/>
 								<TextField
 									id="outlined-multiline-static"
 									label={i18n.t('message_contact')}
+									name="textbody"
 									multiline
 									rows="4"
 									fullWidth
 									variant="outlined"
+									onChange={event => setMessage({ ...message, body: event.currentTarget.value })}
 								/>
 								<Button type="submit" color="primary" variant="contained" className={classes.button}>
 									{i18n.t('send_contact')}
@@ -59,7 +84,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 						</Hidden>
 					</Grid>
 				</Grid>
-				<Snackbar open={open} onClose={handleClose} message="We will send you our best offers, once a week." />
+				<Snackbar open={open} onClose={handleClose} message={i18n.t('message_thanks')} />
 			</Container>
 		</Container>
 	);

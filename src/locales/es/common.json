@@ -38,7 +38,10 @@
 	"name_contact": "Nombre",
 	"company_contact": "Compañía",
 	"email_contact": "Email",
+	"email_placeholder": "Tu email",
 	"message_contact": "Mensaje",
+	"message_description": "Por favor complete su correo electrónico y mensaje para contactarnos.",
+	"message_thanks": "¡Gracias! Nuestro equipo se pondrá en contacto con usted pronto.",
 	"send_contact": "Enviar",
 	"menu_company": "menu_company",
 	"error-with-status": "Ooops! no esta donde debería estar."

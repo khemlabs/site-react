@@ -18,7 +18,6 @@ import CompanyExpertise from 'components/sections/CompanyExpertise';
 import CompanyPortfolio from 'components/sections/CompanyPortfolio';
 import CompanyContact from 'components/sections/CompanyContact';
 import CompanyTeam from 'components/sections/CompanyTeam/CompanyTeam';
-import PortfolioModal from 'components/modals/PortfolioModal';
 
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 

@@ -10,7 +10,6 @@ import Box from '@material-ui/core/Box';
 
 import { useTranslation } from 'components/i18n';
 import Modal from 'components/Modal';
-//import PortfolioModal, { usePortfolioModal } from 'components/modals/PortfolioModal';
 
 const images = [
 	{
@@ -121,14 +120,6 @@ const images = [
 		]
 	}
 ];
-
-// const pages = images.map(image => {
-// 	image.screenshots.map(screenshots => ({ style }: any) => (
-// 		<animated.div style={style}>
-// 			<img src={screenshots} />
-// 		</animated.div>
-// 	));
-// });
 
 const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
@@ -304,9 +295,9 @@ const useStyles = makeStyles((theme: Theme) =>
 			padding: theme.spacing(2, 4, 3)
 		},
 		transitionContainer: {
-			position: 'relative'
-			// width: '80vw',
-			// height: '80vh'
+			position: 'relative',
+			width: '80vw',
+			height: '80vh'
 		},
 		transitionMain: {
 			cursor: 'pointer',
