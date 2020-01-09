@@ -14,19 +14,27 @@ import Copyright from './Copyright';
 const footers = [
 	{
 		title: 'Company',
-		description: ['Team', 'History', 'Contact us', 'Locations']
+		items: [
+			{ title: 'Team', link: '#team' },
+			{ title: 'About Us', link: '#about' },
+			{ title: 'Porfolio', link: '#portfolio' },
+			{ title: 'Expertise', link: '#expertise' }
+		]
 	},
 	{
-		title: 'Features',
-		description: ['Cool stuff', 'Random feature', 'Team feature', 'Developer stuff', 'Another one']
-	},
-	{
-		title: 'Resources',
-		description: ['Resource', 'Resource name', 'Another resource', 'Final resource']
+		title: 'Languages',
+		items: [
+			{ title: 'English', link: '/en' },
+			{ title: 'Español', link: '/es' },
+			{ title: '中文', link: '/zh' }
+		]
 	},
 	{
 		title: 'Legal',
-		description: ['Privacy policy', 'Terms of use']
+		items: [
+			{ title: 'Privacy policy', link: '/privacy.pdf' },
+			{ title: 'Terms of use', link: '/terms.pdf' }
+		]
 	}
 ];
 
@@ -44,10 +52,10 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 								{footer.title}
 							</Typography>
 							<ul>
-								{footer.description.map(item => (
-									<li key={item}>
-										<Link href="#" variant="subtitle1" color="textSecondary">
-											{item}
+								{footer.items.map((item, index) => (
+									<li key={index}>
+										<Link href={item.link} variant="subtitle1" color="textSecondary">
+											{item.title}
 										</Link>
 									</li>
 								))}

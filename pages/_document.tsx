@@ -21,6 +21,9 @@ export default class MyDocument extends Document {
 						name="keywords"
 						content="startup studio,startup,enterpreneur,venture builder,company builder,parallel entrepreneurship,html,html5,html 5,css,css3,css 3,json,api,web development,javascript,angularjs,angular js,reactjs,react js,redis,mongodb,postgresql,postgres,python,game development,mobile,responsive,php,amazon,android,linux,open source"
 					/>
+					<link rel="alternate" href="https://khemlabs.com/" hrefLang="x-default" />
+					<link rel="alternate" hrefLang="es" href="https://khemlabs.com/es" />
+					<link rel="alternate" hrefLang="en" href="https://khemlabs.com/en" />
 				</Head>
 				<body itemScope itemType="http://schema.org/LocalBusiness">
 					<Main />

@@ -14,7 +14,7 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 	const i18n = useTranslation('common');
 
 	return (
-		<AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+		<AppBar position="fixed" color="default" elevation={0} className={classes.appBar}>
 			<Toolbar className={classes.toolbar}>
 				<Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
 					<span className={classes.titleVariant}>khem</span>
@@ -30,15 +30,12 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 					<Link variant="button" color="textPrimary" href="#services" className={classes.link}>
 						{i18n.t('menu_services')}
 					</Link>
-					<Link variant="button" color="textPrimary" href="#companies" className={classes.link}>
-						{i18n.t('menu_companies')}
+					<Link variant="button" color="textPrimary" href="#portfolio" className={classes.link}>
+						{i18n.t('menu_portfolio')}
 					</Link>
-					<Link variant="button" color="textPrimary" href="#expertise" className={classes.link}>
+					{/* <Link variant="button" color="textPrimary" href="#expertise" className={classes.link}>
 						{i18n.t('menu_technologies')}
-					</Link>
-					<Link variant="button" color="textPrimary" href="#clients" className={classes.link}>
-						{i18n.t('menu_clients')}
-					</Link>
+					</Link> */}
 					<Link variant="button" color="textPrimary" href="#contact" className={classes.link}>
 						{i18n.t('menu_contact')}
 					</Link>

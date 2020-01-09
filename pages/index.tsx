@@ -18,6 +18,7 @@ import CompanyExpertise from 'components/sections/CompanyExpertise';
 import CompanyPortfolio from 'components/sections/CompanyPortfolio';
 import CompanyContact from 'components/sections/CompanyContact';
 import CompanyTeam from 'components/sections/CompanyTeam/CompanyTeam';
+import PortfolioModal from 'components/modals/PortfolioModal';
 
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -47,6 +48,7 @@ export default function Index(): JSX.Element {
 		<React.Fragment>
 			<CssBaseline />
 			<Header />
+			<div className={classes.placeholder} />
 			<Container maxWidth="xl" component="main" className={classes.content}>
 				<CompayHero />
 				<CompanyConsole />
@@ -55,7 +57,7 @@ export default function Index(): JSX.Element {
 				<CompanyTeam />
 				<CompanyServices />
 				<CompanyPortfolio />
-				<CompanyExpertise />
+				{/* <CompanyExpertise /> */}
 				<CompanyContact />
 			</Container>
 			<Footer />
@@ -71,6 +73,12 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundPosition: 'right top',
 			backgroundRepeat: 'no-repeat',
 			backgroundAttachment: 'fixed'
+		},
+		placeholder: {
+			height: 64,
+			[theme.breakpoints.up('sm')]: {
+				height: 70
+			}
 		}
 	})
 );
