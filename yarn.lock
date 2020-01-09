@@ -965,6 +965,13 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.15.tgz#8dfb6ce22fedd469128137640a3aa8f17415422f"
   integrity sha512-Pv+vWicyFd07Hw/SmNnTUguqrHgDfMtjabvD9sQyxeqbpCEg8CmViLBaVPHtNsoBgZECrRf5/pgV6FJIBrGSjw==
 
+"@types/nodemailer@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.0.tgz#d8c039be3ed685c4719a026455555be82c124b74"
+  integrity sha512-KY7bFWB0MahRZvVW4CuW83qcCDny59pJJ0MQ5ifvfcjNwPlIT0vW4uARO4u1gtkYnWdhSvURegecY/tzcukJcA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/prop-types@*":
   version "15.7.3"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
@@ -989,6 +996,13 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/redis@^2.8.14":
+  version "2.8.14"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.14.tgz#2ed46d0f923f7ccd63fbe73a46a1241e606cf716"
+  integrity sha512-255dzsOLJdXFHBio9/aMHGozNkoiBUgc+g2nlNjbTSp5qcAlmpm4Z6Xs3pKOBLNIKdZbA2BkUxWvYSIwKra0Yw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/serve-static@*":
   version "1.13.3"
@@ -2302,6 +2316,11 @@ dot-prop@^5.0.0:
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
   dependencies:
     is-obj "^2.0.0"
+
+double-ended-queue@^2.1.0-0:
+  version "2.1.0-0"
+  resolved "https://registry.yarnpkg.com/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz#103d3527fd31528f40188130c841efdd78264e5c"
+  integrity sha1-ED01J/0xUo9AGIEwyEHv3XgmTlw=
 
 duplexify@^3.4.2, duplexify@^3.6.0:
   version "3.7.1"
@@ -3996,6 +4015,11 @@ node-releases@^1.1.42:
   dependencies:
     semver "^6.3.0"
 
+nodemailer@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.4.2.tgz#7147550e32cdc37453380ab78d2074533966090a"
+  integrity sha512-g0n4nH1ONGvqYo1v72uSWvF/MRNnnq1LzmSzXb/6EPF3LFb51akOhgG3K2+aETAsJx90/Q5eFNTntu4vBCwyQQ==
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
@@ -5073,6 +5097,25 @@ readdirp@^2.2.1:
     graceful-fs "^4.1.11"
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
+
+redis-commands@^1.2.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.5.0.tgz#80d2e20698fe688f227127ff9e5164a7dd17e785"
+  integrity sha512-6KxamqpZ468MeQC3bkWmCB1fp56XL64D4Kf0zJSwDZbVLLm7KFkoIcHrgRvQ+sk8dnhySs7+yBg94yIkAK7aJg==
+
+redis-parser@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/redis-parser/-/redis-parser-2.6.0.tgz#52ed09dacac108f1a631c07e9b69941e7a19504b"
+  integrity sha1-Uu0J2srBCPGmMcB+m2mUHnoZUEs=
+
+redis@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/redis/-/redis-2.8.0.tgz#202288e3f58c49f6079d97af7a10e1303ae14b02"
+  integrity sha512-M1OkonEQwtRmZv4tEWF2VgpG0JWJ8Fv1PhlgT5+B+uNq2cA3Rt1Yt/ryoR+vQNOQcIEgdCdfH0jr3bDpihAw1A==
+  dependencies:
+    double-ended-queue "^2.1.0-0"
+    redis-commands "^1.2.0"
+    redis-parser "^2.6.0"
 
 reflect.ownkeys@^0.2.0:
   version "0.2.0"
