@@ -1,15 +1,11 @@
 import { NextApiResponse, NextApiRequest } from 'next';
 
 type DataEmail = {
-	name: string;
-	company: string;
 	email: string;
 	textbody: string;
 };
 
 type EmailType = {
-	first_name: string;
-	company: string;
 	email: string;
 	textbody: string;
 };
@@ -17,7 +13,7 @@ type EmailType = {
 const redis = require('redis'),
 	log = require('./Log'),
 	nodemailer = require('nodemailer'),
-	client = redis.createClient(6379, 'redishost');
+	client = redis.createClient(6379, 'db');
 
 // nodemailer singleton
 let transporter: any;
@@ -77,8 +73,6 @@ const email = (data: DataEmail) => {
 		to: process.env.GMAIL_OAUTH_RECEIVER,
 		subject: 'Message from site',
 		html: `<p>
-			Name: ${data.name}<br> 
-			Company: ${data.company}<br> 
 			Email: ${data.email}<br> 
 			Message: <br>
 			${data.textbody}
@@ -90,8 +84,6 @@ const email = (data: DataEmail) => {
 
 const save = (data: NextApiRequest & EmailType) => {
 	const dataEmail = {
-		name: data.first_name,
-		company: data.company,
 		email: data.email,
 		textbody: data.textbody
 	};
