@@ -17,6 +17,7 @@
 
 # production
 /build
+prod.env
 
 # misc
 .DS_Store

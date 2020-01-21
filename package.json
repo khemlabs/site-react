@@ -4,9 +4,9 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"dev": "ts-node --project tsconfig.server.json server/index.ts",
+		"dev": "TS_NODE_PROJECT=tsconfig.server.json node --inspect=0.0.0.0 -r ts-node/register server/index.ts",
 		"build": "next build",
-		"start": "NODE_ENV=production node index.js",
+		"start": "NODE_ENV=production ts-node --project tsconfig.server.json server/index.ts",
 		"type-check": "tsc"
 	},
 	"dependencies": {

@@ -26,8 +26,11 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Next: Node",
-			"runtimeExecutable": "next",
-			"runtimeArgs": ["--inspect"],
+			"runtimeExecutable": "node",
+			"env": {
+				"TS_NODE_PROJECT": "tsconfig.server.json"
+			},
+			"runtimeArgs": ["--inspect=0.0.0.0", "-r", "ts-node/register", "server/index.ts"],
 			"port": 9229,
 			"console": "integratedTerminal"
 		}
