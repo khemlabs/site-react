@@ -9,6 +9,8 @@ services:
     ports:
       - '${DEBUG_PORT:-9229}:9229'
     environment:
+      BABEL_DISABLE_CACHE: '1'
+      NODE_ENV: 'development'
       VIRTUAL_HOST: '${VHOST:-site.local.khem.io}'
       VIRTUAL_PORT: '${VPORT:-3000}'
       LETSENCRYPT_HOST: '${VHOST:-site.local.khem.io}'

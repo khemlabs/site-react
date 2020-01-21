@@ -4,22 +4,38 @@
 		{
 			"type": "chrome",
 			"request": "launch",
-			"name": "Next: Chrome",
+			"name": "Next: Chrome Local",
 			"url": "http://localhost:3000",
 			"webRoot": "${workspaceFolder}"
 		},
 		{
 			"type": "firefox",
 			"request": "launch",
-			"name": "Next: Firefox",
+			"name": "Next: Firefox Local",
+			"reAttach": true,
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "firefox",
+			"request": "launch",
+			"name": "Next: Firefox Proxy",
+			"reAttach": true,
+			"url": "http://site.local.khem.io",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "firefox",
+			"request": "attach",
+			"name": "Next: Attach Firefox Local",
 			"url": "http://localhost:3000",
 			"webRoot": "${workspaceFolder}"
 		},
 		{
 			"type": "firefox",
 			"request": "attach",
-			"name": "Next: Attach Firefox",
-			"url": "http://localhost:3000",
+			"name": "Next: Attach Firefox Proxy",
+			"url": "http://site.local.khem.io",
 			"webRoot": "${workspaceFolder}"
 		},
 		{
@@ -28,17 +44,38 @@
 			"name": "Next: Node",
 			"runtimeExecutable": "node",
 			"env": {
+				"BABEL_DISABLE_CACHE": "1",
 				"TS_NODE_PROJECT": "tsconfig.server.json"
 			},
 			"runtimeArgs": ["--inspect=0.0.0.0", "-r", "ts-node/register", "server/index.ts"],
 			"port": 9229,
 			"console": "integratedTerminal"
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Docker: Attach",
+			"protocol": "auto",
+			"port": 9229,
+			"restart": true,
+			"localRoot": "${workspaceFolder}/",
+			"remoteRoot": "/app",
+			"outFiles": ["${workspaceFolder}/src/**/*.js"],
+			"skipFiles": ["<node_internals>/**/*.js"]
 		}
 	],
 	"compounds": [
 		{
-			"name": "Next: Full",
-			"configurations": ["Next: Node", "Next: Chrome"]
+			"name": "Next: Full Chrome",
+			"configurations": ["Next: Node", "Next: Chrome Local"]
+		},
+		{
+			"name": "Next: Full Firefox",
+			"configurations": ["Next: Node", "Next: Attach Firefox Local"]
+		},
+		{
+			"name": "Next: Full Docker",
+			"configurations": ["Docker: Attach", "Next: Firefox Proxy"]
 		}
 	]
 }

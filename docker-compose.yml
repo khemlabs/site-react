@@ -21,6 +21,7 @@ services:
     container_name: app.khemlabs
     env_file: '${ENV_APP_FILE_PATH:-.env}'
     environment:
+      NODE_ENV: 'production'
       VIRTUAL_HOST: '${VHOST:-khemlabs.com}'
       VIRTUAL_PORT: '${VPORT:-3000}'
       LETSENCRYPT_HOST: '${VHOST:-khemlabs.com}'
