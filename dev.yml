@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  db:
+    volumes:
+      - '${REDIS_PATH:-dbdata}:/data/db'
+    restart: 'no'
+  app:
+    ports:
+      - '${DEBUG_PORT:-9229}:9229'
+    environment:
+      VIRTUAL_HOST: '${VHOST:-site.local.khem.io}'
+      VIRTUAL_PORT: '${VPORT:-3000}'
+      LETSENCRYPT_HOST: '${VHOST:-site.local.khem.io}'
+      LETSENCRYPT_EMAIL: '${EMAIL:-test@khemlabs.com}'
+    volumes:
+      - './:/app'
+    restart: 'no'
+    command: ['npm', 'run', 'dev']

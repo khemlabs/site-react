@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  db:
+    image: redis:5
+    container_name: redis.khemlabs
+    volumes:
+      - '${REDIS_PATH:-dbdata}:/data/db'
+    restart: always
+    deploy:
+      placement:
+        constraints:
+          - node.labels.type == db
+    networks:
+      - site_network
+  app:
+    depends_on:
+      - db
+    build: .
+    image: 'khemlabs/khemlabs-site:${TAG:-latest}'
+    container_name: app.khemlabs
+    env_file: '${ENV_APP_FILE_PATH:-.env}'
+    environment:
+      VIRTUAL_HOST: '${VHOST:-khemlabs.com}'
+      VIRTUAL_PORT: '${VPORT:-3000}'
+      LETSENCRYPT_HOST: '${VHOST:-khemlabs.com}'
+      LETSENCRYPT_EMAIL: '${EMAIL:-ops@khemlabs.com}'
+    volumes:
+      - '${APP_PATH:-appdata}:/app'
+    deploy:
+      placement:
+        constraints:
+          - node.labels.type == api
+    restart: always
+    networks:
+      - site_network
+
+volumes:
+  dbdata:
+  appdata:
+
+networks:
+  site_network:
+    external: true
+    driver: overlay
