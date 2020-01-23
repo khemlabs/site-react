@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "esnext",
+		"module": "esnext",
 		"lib": ["es6", "dom", "dom.iterable", "esnext"],
 		"typeRoots": ["./node_modules/@types/", "./src/types/"],
-		"module": "esnext",
 		"moduleResolution": "node",
 		"jsx": "preserve",
 		"baseUrl": "./src",
@@ -20,6 +20,6 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["dist", ".next", "out", "next.config.js"],
 	"include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx"]
 }

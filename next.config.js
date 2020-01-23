@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+	publicRuntimeConfig: {
+		localeSubpaths: typeof process.env.LOCALE_SUBPATHS === 'string' ? process.env.LOCALE_SUBPATHS : 'none'
+	},
 	webpack(config, options) {
 		config.resolve.alias['assets'] = path.join(__dirname, 'src/assets');
 		config.resolve.alias['components'] = path.join(__dirname, 'src/components');

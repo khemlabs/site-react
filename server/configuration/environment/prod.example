@@ -1,0 +1,20 @@
+### Nginx Proxy virtual host
+VIRTUAL_HOST=https://api.myhost
+VIRTUAL_PORT=3000
+
+### Letsencrypt
+LETSENCRYPT_HOST=https://api.myhost
+LETSENCRYPT_EMAIL=test@myhost 
+
+# GMAIL
+GMAIL_OAUTH_USERNAME=khemlabsapp@gmail.com
+GMAIL_OAUTH_CLIENT_ID=210964953888-pdo97ufb64ju9gsc5phuh0ujf8144gjb.apps.googleusercontent.com
+GMAIL_OAUTH_CLIENT_SECRET=W_u7ApEItRzSz8DN07hdvFe4
+GMAIL_OAUTH_REFRESH_TOKEN=1/j82_ZlSqTdHolmaA-s3Vfxo9rphZMHSStQTDnZeiuiE
+GMAIL_OAUTH_ACCESS_TOKEN=ya29.GlvUBNdUR1VcizvAkYFUU9wWgDKp-EboyO6k3XsILOpet9Saor28PWymBlo7SjMm7DoybhTg33i_Pn4vETGQrefKYm_c5gwjNWaoEFd48Yva5F9yinq8kyDsraqI
+GMAIL_OAUTH_SENDER=khemlabsapp@gmail.com
+
+# DISABLED EMAIL IN true IS REQUIRED IF NO GMAIL CREDENTIALS
+DISABLE_EMAIL=false
+
+NODE_ENV=production

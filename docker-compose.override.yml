@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  db:
+    volumes:
+      - '${PATH_REDIS:-dbdata}:/data/db'
+    restart: 'no'
+  app:
+    ports:
+      - '${DEBUG_PORT:-9229}:9229'
+    env_file: '${ENV_APP_FILE_PATH:-./server/configuration/environment/dev.env}'
+    volumes:
+      - './:/app'
+    restart: 'no'
+    command: ['yarn', 'dev']
+
+networks:
+  site_network:
+    name: site_network
