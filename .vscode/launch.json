@@ -42,14 +42,19 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Next: Node",
-			"runtimeExecutable": "node",
-			"env": {
-				"BABEL_DISABLE_CACHE": "1",
-				"TS_NODE_PROJECT": "tsconfig.server.json"
-			},
-			"runtimeArgs": ["--inspect=0.0.0.0", "-r", "ts-node/register", "server/index.ts"],
+			"restart": true,
+			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
 			"port": 9229,
+			"outFiles": ["${workspaceFolder}/.next/server/**/*.js"],
 			"console": "integratedTerminal"
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Next: Attach Nodemon",
+			"restart": true,
+			// "outFiles": ["${workspaceFolder}/.next/server/**/*.js"],
+			"port": 9229
 		},
 		{
 			"type": "node",
@@ -58,10 +63,11 @@
 			"protocol": "auto",
 			"port": 9229,
 			"restart": true,
-			"localRoot": "${workspaceFolder}/",
-			"remoteRoot": "/app",
-			"outFiles": ["${workspaceFolder}/src/**/*.js"],
-			"skipFiles": ["<node_internals>/**/*.js"]
+			"localRoot": "${workspaceFolder}/server",
+			"remoteRoot": "/app/server",
+			// "outFiles": ["${workspaceFolder}/src/pages/**/*.js"],
+			"outFiles": ["${workspaceFolder}/.next/server/**/*.js"],
+			"skipFiles": ["${workspaceFolder}/node_modules/**/*.js", "<node_internals>/**/*.js"]
 		}
 	],
 	"compounds": [
