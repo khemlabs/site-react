@@ -92,9 +92,23 @@ const save = (data: NextApiRequest & EmailType) => {
 };
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-	save(req.body);
+	if (req.method == 'POST') {
+		save(req.body);
 
-	res.setHeader('Content-Type', 'application/json');
-	res.statusCode = 200;
-	res.end(JSON.stringify({ result: 'ok' }));
+		res.setHeader('Content-Type', 'application/json');
+		res.statusCode = 200;
+		res.end(JSON.stringify({ result: 'ok' }));
+	} else {
+		res.setHeader('Content-Type', 'application/json');
+		res.statusCode = 400;
+		res.end(JSON.stringify({ result: 'error' }));
+	}
+};
+
+export const config = {
+	api: {
+		bodyParser: {
+			sizeLimit: '500kb'
+		}
+	}
 };
