@@ -34,7 +34,7 @@ const baseTheme = createMuiTheme(
 			type: UIColorVariant.Light,
 			contrastThreshold: 3,
 			tonalOffset: 0.2,
-			background: { default: gradientRed }
+			background: { default: lightGray }
 		},
 		direction: 'ltr',
 		typography: {

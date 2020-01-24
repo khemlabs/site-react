@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme: Theme) =>
 			justifyContent: 'center'
 		},
 		paper: {
-			backgroundColor: theme.palette.background.paper,
+			backgroundColor: (props: any): string =>
+				props.backgroundColor ? `${props.backgroundColor}` : theme.palette.background.paper,
 			border: '2px solid #000',
 			boxShadow: theme.shadows[5],
 			padding: theme.spacing(2, 4, 3)
@@ -21,8 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-const TransitionsModal: React.FunctionComponent<ModalProps> = ({ children, open, onClose }) => {
-	const classes = useStyles();
+interface TransitionsProps extends ModalProps {
+	backgroundColor?: string;
+}
+
+const TransitionsModal: React.FunctionComponent<TransitionsProps> = ({ children, open, onClose, backgroundColor }) => {
+	const classes = useStyles({ backgroundColor });
 
 	return (
 		<Modal

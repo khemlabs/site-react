@@ -32,10 +32,7 @@ const Hero: React.FunctionComponent<HeroProps> = ({ children, backgroundImage, b
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		background: {
-			backgroundImage: (props: any): string => {
-				console.log(props.backgroundImage);
-				return props.backgroundImage ? `url(${props.backgroundImage})` : '';
-			},
+			backgroundImage: (props: any): string => (props.backgroundImage ? `url(${props.backgroundImage})` : ''),
 			backgroundColor: (props: any): string =>
 				props.backgroundColor ? `${props.backgroundColor}` : theme.palette.background.paper, // Average color of the background image.
 			backgroundPosition: 'center'
