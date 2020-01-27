@@ -29,28 +29,28 @@ const CompanyServices: React.FunctionComponent = ({}): JSX.Element => {
 					{i18n.t('menu_services')}
 				</Typography>
 				<Grid container spacing={5}>
-					<Grid item xs={12}>
+					<Grid item xs={12} itemProp="itemListElement" itemScope itemType="http://schema.org/Product">
 						<Service
 							title={i18n.t('title_rest')}
 							image="./assets/img/services.jpg"
 							description={i18n.t('description_rest')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid item xs={12} itemProp="itemListElement" itemScope itemType="http://schema.org/Product">
 						<Service
 							title={i18n.t('title_canvas')}
 							image="./assets/img/multimedia.jpg"
 							description={i18n.t('description_canvas')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid item xs={12} itemProp="itemListElement" itemScope itemType="http://schema.org/Product">
 						<Service
 							title={i18n.t('title_singlepage')}
 							image="./assets/img/spa.jpg"
 							description={i18n.t('description_singlepage')}
 						/>
 					</Grid>
-					<Grid item xs={12}>
+					<Grid item xs={12} itemProp="itemListElement" itemScope itemType="http://schema.org/Offer">
 						<Service
 							title={i18n.t('title_realtime')}
 							image="./assets/img/realtime.jpg"

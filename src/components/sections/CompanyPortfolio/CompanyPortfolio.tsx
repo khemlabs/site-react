@@ -155,7 +155,14 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	));
 
 	return (
-		<Container id="portfolio" className={classes.root} component="section">
+		<Container
+			id="portfolio"
+			className={classes.root}
+			component="section"
+			itemProp="manufacturer"
+			itemScope
+			itemType="http://schema.org/ItemList"
+		>
 			<Typography variant="h2" className={classes.title}>
 				{i18n.t('menu_portfolio')}
 			</Typography>
@@ -169,16 +176,20 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 							width: image.width
 						}}
 						onClick={() => handleOpen(index)}
+						itemProp="itemListElement"
+						itemScope
+						itemType="http://schema.org/Product"
 					>
 						<div
 							className={classes.imageSrc}
+							itemProp="image"
 							style={{
 								backgroundImage: `url(${image.url})`
 							}}
 						/>
 						<div className={classes.imageBackdrop} />
 						<div className={classes.imageButton}>
-							<Typography component="h3" variant="h6" color="inherit" className={classes.imageTitle}>
+							<Typography component="h3" variant="h6" color="inherit" itemProp="name" className={classes.imageTitle}>
 								{image.title}
 								<div className={classes.imageMarked} />
 							</Typography>

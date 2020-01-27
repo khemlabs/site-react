@@ -12,10 +12,10 @@ export interface FontSizes {
 
 declare module '@material-ui/core/styles/createMuiTheme' {
 	interface ThemeOptions {
-		sizes?: FontSizes;
+		sizes: FontSizes;
 	}
 
 	interface Theme {
-		sizes?: FontSizes;
+		sizes: FontSizes;
 	}
 }

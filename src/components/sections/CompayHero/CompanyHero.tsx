@@ -21,7 +21,7 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 	return (
 		<Container maxWidth={'xl'} component="section" className={classes.root}>
 			<Hero backgroundImage="./assets/img/team-2.jpg">
-				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom itemProp="name">
+				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
 					<Link
 						itemProp="url"
 						variant="subtitle1"
@@ -36,7 +36,7 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 						<strong className={classes.titleRed}>labs</strong>
 					</span>
 				</Typography>
-				<Typography variant="h5" align="center" gutterBottom>
+				<Typography variant="h5" align="center" gutterBottom itemProp="slogan">
 					{i18n.t('khemlabs_frase')}
 				</Typography>
 				<Typography variant="body2" align="center" gutterBottom>

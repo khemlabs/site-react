@@ -18,7 +18,7 @@ const Service: React.FunctionComponent<ServiceProps> = ({ image, title, descript
 	const classes = useStyles();
 
 	return (
-		<Card itemProp="itemListElement" itemScope itemType="http://schema.org/Offer">
+		<Card>
 			<CardActionArea>
 				<CardMedia itemProp="image" className={classes.media} image={image} title={title} />
 				<CardContent className={classes.background}>

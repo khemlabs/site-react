@@ -5,12 +5,14 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useTranslation } from 'components/i18n';
 import Card from './Card';
+import { CardHeader, CardContent } from '@material-ui/core';
 
 export type ShowcaseCard = {
-	title?: string;
+	title?: React.ReactNode | JSX.Element | string;
 	subtitle?: string;
 	body: React.ReactNode | JSX.Element;
 	action?: React.ReactNode | JSX.Element;
+	containerProps?: any;
 };
 
 type ShowcaseProps = {
@@ -22,16 +24,36 @@ const Showcase: React.FunctionComponent<ShowcaseProps> = ({ cards, children }): 
 	const i18n = useTranslation('common');
 
 	return (
-		<Grid xl container spacing={5} alignItems="center" className={classes.gridFluid}>
+		<Grid
+			xl
+			container
+			spacing={5}
+			alignItems="center"
+			className={classes.gridFluid}
+			itemProp="makesOffer"
+			itemScope
+			itemType="http://schema.org/ItemList"
+		>
 			{cards.map((card: ShowcaseCard, index: number) => (
-				<Grid item key={`showcas_${index}`} xs={12} sm={6} md={4}>
-					<Card
-						title={card.title ? card.title : null}
-						subheader={card.subtitle ? card.subtitle : null}
-						actions={card.action ? card.action : null}
-					>
-						<div className={classes.cardBody}>{card.body}</div>
-					</Card>
+				<Grid
+					item
+					key={`showcas_${index}`}
+					xs={12}
+					sm={6}
+					md={4}
+					itemProp="itemListElement"
+					itemScope
+					itemType="http://schema.org/Offer"
+				>
+					<div {...card.containerProps}>
+						<Card
+							title={card.title ? card.title : null}
+							subheader={card.subtitle ? card.subtitle : null}
+							actions={card.action ? card.action : null}
+						>
+							{card.body}
+						</Card>
+					</div>
 				</Grid>
 			))}
 			{children && (

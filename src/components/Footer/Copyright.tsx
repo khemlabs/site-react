@@ -13,9 +13,9 @@ const Copyright: React.FunctionComponent = ({}): JSX.Element => {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
 			{'Copyright © '}
-			<Link color="inherit" href="https://khemlabs.com/" className={classes.title}>
+			<Link color="inherit" href="https://khemlabs.com/" itemProp="legalName" className={classes.title}>
 				<span className={classes.variant}>khem</span>
-				<span className={classes.red}>labs</span>
+				<span className={classes.red}>labs</span> S.R.L
 			</Link>{' '}
 			{new Date().getFullYear()}
 			{'.'}
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontFamily: 'Ubuntu'
 		},
 		variant: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark
+			color: theme.palette.type === 'light' ? theme.palette.secondary.dark : theme.palette.secondary.light
 		},
 		red: {
 			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark

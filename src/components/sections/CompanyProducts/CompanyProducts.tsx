@@ -14,33 +14,55 @@ const CompanyProducts: React.FunctionComponent = ({}): JSX.Element => {
 
 	const products = [
 		{
-			title: i18n.t('wwd_apps_title'),
+			title: <span itemProp="name">{i18n.t('wwd_apps_title')}</span>,
 			body: (
-				<Typography variant="body1" color="textPrimary">
+				<Typography itemProp="description" variant="body1" color="textPrimary">
 					{i18n.t('wwd_apps_description')}
 				</Typography>
-			)
+			),
+			containerProps: {
+				itemProp: 'itemOffered',
+				itemScope: 'itemScope',
+				itemType: 'http://schema.org/Service'
+			}
 		},
 		{
-			title: i18n.t('wwd_multimedia_title'),
+			title: <span itemProp="name">{i18n.t('wwd_multimedia_title')}</span>,
 			body: (
-				<Typography variant="body1" color="textPrimary">
+				<Typography itemProp="description" variant="body1" color="textPrimary">
 					{i18n.t('wwd_multimedia_description')}
 				</Typography>
-			)
+			),
+			containerProps: {
+				itemProp: 'itemOffered',
+				itemScope: 'itemScope',
+				itemType: 'http://schema.org/Service'
+			}
 		},
 		{
-			title: i18n.t('wwd_customized_title'),
+			title: <span itemProp="name">{i18n.t('wwd_customized_title')}</span>,
 			body: (
-				<Typography variant="body1" color="textPrimary">
+				<Typography itemProp="description" variant="body1" color="textPrimary">
 					{i18n.t('wwd_customized_description')}
 				</Typography>
-			)
+			),
+			containerProps: {
+				itemProp: 'itemOffered',
+				itemScope: 'itemScope',
+				itemType: 'http://schema.org/Service'
+			}
 		}
 	];
 
 	return (
-		<Container id="products" component="section" className={classes.content}>
+		<Container
+			id="products"
+			component="section"
+			className={classes.content}
+			itemScope
+			itemType="http://schema.org/Service"
+		>
+			<meta itemProp="serviceType" content="Software Development" />
 			<CardsShowcase cards={products} />
 		</Container>
 	);

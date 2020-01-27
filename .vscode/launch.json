@@ -63,11 +63,12 @@
 			"protocol": "auto",
 			"port": 9229,
 			"restart": true,
-			"localRoot": "${workspaceFolder}/server",
-			"remoteRoot": "/app/server",
-			// "outFiles": ["${workspaceFolder}/src/pages/**/*.js"],
-			"outFiles": ["${workspaceFolder}/.next/server/**/*.js"],
-			"skipFiles": ["${workspaceFolder}/node_modules/**/*.js", "<node_internals>/**/*.js"]
+			"stopOnEntry": true,
+			"cwd": "${workspaceFolder}",
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "/app"
+			// "outFiles": ["$/app/.next/server/**/*.js"],
+			// "skipFiles": ["/app/node_modules/**/*.js", "<node_internals>/**/*.js"]
 		}
 	],
 	"compounds": [

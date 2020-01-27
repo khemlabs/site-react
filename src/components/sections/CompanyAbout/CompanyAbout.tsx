@@ -16,7 +16,7 @@ const CompanyAbout: React.FunctionComponent = ({}): JSX.Element => {
 				<Typography variant="h2" className={classes.title}>
 					{i18n.t('menu_about')}
 				</Typography>
-				<Typography variant="body1" component="p">
+				<Typography itemProp="description" variant="body1" component="p">
 					{i18n.t('description_about')}
 				</Typography>
 			</Container>

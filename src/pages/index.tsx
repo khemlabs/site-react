@@ -45,7 +45,7 @@ export default function Index(): JSX.Element {
 
 	return (
 		<React.Fragment>
-			<CssBaseline />
+			{/* <CssBaseline /> */}
 			<Header />
 			<div className={classes.placeholder} />
 			<Container maxWidth="xl" component="main" className={classes.content}>
