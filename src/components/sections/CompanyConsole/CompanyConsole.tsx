@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Container from '@material-ui/core/Container';
-import { Spring, animated } from 'react-spring/renderprops';
+import { useSpring, animated } from 'react-spring';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useTranslation } from 'components/i18n';
@@ -13,18 +13,28 @@ const CompanyConsole: React.FunctionComponent = ({}): JSX.Element => {
 	const i18n = useTranslation('common');
 	const [reset, setReset] = useState(false);
 
+	const fadeInOut = useSpring({
+		from: { opacity: 1 },
+		to: { opacity: 0 },
+		reverse: reset,
+		onRest: () => setReset(!reset)
+	});
+
 	return (
 		<Container maxWidth="xl" component="section" className={classes.container}>
 			<Box className={classes.container}>
 				<Typography variant="body2" display="inline" className={classes.console}>
 					>
-					<Spring from={{ opacity: 1 }} to={{ opacity: 0 }} reverse={reset} onRest={() => setReset(!reset)}>
+					{/* <Spring from={{ opacity: 1 }} to={{ opacity: 0 }} reverse={reset} onRest={() => setReset(!reset)}>
 						{(props: any) => (
 							<animated.span className={classes.consoleText} style={props}>
 								_
 							</animated.span>
 						)}
-					</Spring>
+					</Spring> */}
+					<animated.span className={classes.consoleText} style={fadeInOut}>
+						_
+					</animated.span>
 				</Typography>
 			</Box>
 		</Container>
