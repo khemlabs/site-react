@@ -11,36 +11,36 @@ import { useTranslation } from 'components/i18n';
 
 import Copyright from './Copyright';
 
-const footers = [
-	{
-		title: 'Company',
-		items: [
-			{ title: 'Team', link: '#team' },
-			{ title: 'About Us', link: '#about' },
-			{ title: 'Porfolio', link: '#portfolio' },
-			{ title: 'Expertise', link: '#expertise' }
-		]
-	},
-	{
-		title: 'Languages',
-		items: [
-			{ title: 'English', link: '/en' },
-			{ title: 'Español', link: '/es' },
-			{ title: '中文', link: '/zh' }
-		]
-	},
-	{
-		title: 'Legal',
-		items: [
-			{ title: 'Privacy policy', link: 'legal/PrivacyPolicy.pdf' }
-			// { title: 'Terms of use', link: '/terms.pdf' }
-		]
-	}
-];
-
 const Header: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
+
+	const footers = [
+		{
+			title: i18n.t('company_contact'),
+			items: [
+				{ title: i18n.t('menu_team'), link: '#team' },
+				{ title: i18n.t('menu_about'), link: '#about' },
+				{ title: i18n.t('menu_portfolio'), link: '#portfolio' },
+				{ title: i18n.t('menu_technologies'), link: '#expertise' }
+			]
+		},
+		{
+			title: i18n.t('menu_languajes'),
+			items: [
+				{ title: 'English', link: '/en' },
+				{ title: 'Español', link: '/es' },
+				{ title: '中文', link: '/zh' }
+			]
+		},
+		{
+			title: i18n.t('menu_legal'),
+			items: [
+				{ title: i18n.t('policy'), link: 'legal/PrivacyPolicy.pdf' }
+				// { title: 'Terms of use', link: '/terms.pdf' }
+			]
+		}
+	];
 
 	return (
 		<Container maxWidth="xl" component="footer" className={classes.footer}>

@@ -5,10 +5,11 @@ import NextI18Next from 'next-i18next';
 const NextI18NextInstance = new NextI18Next({
 	localePath: './locales',
 	defaultLanguage: 'en',
-	otherLanguages: ['es'],
+	otherLanguages: ['es', 'zh'],
 	localeSubpaths: {
 		en: 'en',
-		es: 'es'
+		es: 'es',
+		zh: 'zh'
 	},
 	ignoreRoutes: ['/_next/', '/static/', '/public/', '/img/', '/assets/', '/legal/', '/pdf/', '/api/']
 });

@@ -16,6 +16,8 @@
 	"menu_clients": "Clients",
 	"menu_companies": "Companies",
 	"menu_contact": "Contact",
+	"menu_languajes": "Languages",
+	"menu_legal": "Legal",
 	"menu_portfolio": "Portfolio",
 	"menu_services": "Services",
 	"menu_team": "Team",
@@ -37,14 +39,14 @@
 	"description_realtime": "The latest browser APIs allow web applications to interact with servers and even others browsers in real time. Technologies such as Web Sockets, Server Sent Events and WebRTC open a new world of possibilities: chats applications, audio and video calls, real time collaboration can now be done without installing any plugins.",
 	"name_contact": "Name",
 	"company_contact": "Company",
-	"email_contact": "Email",
-	"email_placeholder": "Your email",
+	"email_contact": "E-mail",
+	"email_placeholder": "Your e-mail",
 	"message_contact": "Message",
 	"message_description": "Please complete your email and message to contact us.",
 	"message_thanks": "Thanks!, Our team will contact you soon.",
 	"send_contact": "Send",
-	"menu_company": "menu_company",
 	"error-with-status": "Ooops! something is not where it should be",
 	"error_required": "Required",
-	"error_invalid": "Invalid field"
+	"error_invalid": "Invalid field",
+	"policy": "Privacy policy"
 }
