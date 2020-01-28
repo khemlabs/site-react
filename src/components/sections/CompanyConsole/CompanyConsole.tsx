@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Container from '@material-ui/core/Container';
-import { Spring, animated } from 'react-spring';
+import { Spring, animated } from 'react-spring/renderprops';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import { useTranslation } from 'components/i18n';

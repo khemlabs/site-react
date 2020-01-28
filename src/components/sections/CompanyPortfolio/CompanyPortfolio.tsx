@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useTransition, animated, ItemKeys } from 'react-spring';
+import { useTransition, animated } from 'react-spring';
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
@@ -203,7 +203,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 				<Box className={classes.transitionContainer}>
 					{images[gallery].screenshots.length > 1 ? (
 						<div className={classes.transitionMain} onClick={onClick}>
-							{transitions.map(({ item, props, key }) => {
+							{transitions.map(({ item, props, key }: any) => {
 								const Page = pages[item];
 								return <Page key={key} style={props} />;
 							})}
