@@ -32,8 +32,8 @@ const footers = [
 	{
 		title: 'Legal',
 		items: [
-			{ title: 'Privacy policy', link: '/privacy.pdf' },
-			{ title: 'Terms of use', link: '/terms.pdf' }
+			{ title: 'Privacy policy', link: 'legal/PrivacyPolicy.pdf' }
+			// { title: 'Terms of use', link: '/terms.pdf' }
 		]
 	}
 ];

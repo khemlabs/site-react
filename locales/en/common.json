@@ -44,5 +44,7 @@
 	"message_thanks": "Thanks!, Our team will contact you soon.",
 	"send_contact": "Send",
 	"menu_company": "menu_company",
-	"error-with-status": "Ooops! something is not where it should be"
+	"error-with-status": "Ooops! something is not where it should be",
+	"error_required": "Required",
+	"error_invalid": "Invalid field"
 }

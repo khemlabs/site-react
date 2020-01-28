@@ -33,7 +33,18 @@ const baseTheme = createMuiTheme({
 		type: UIColorVariant.Light,
 		contrastThreshold: 3,
 		tonalOffset: 0.2,
-		background: { default: lightGray }
+		background: { default: lightGray },
+		error: {
+			main: lightRed,
+			dark: lightRed,
+			light: darkRed
+		},
+		action: {
+			active: mainRed,
+			disabled: darkGray,
+			hover: lightRed,
+			selected: lightRed
+		}
 	},
 	direction: 'ltr',
 	typography: {
@@ -50,6 +61,10 @@ const baseTheme = createMuiTheme({
 		medium: 16,
 		large: 20,
 		xLarge: 22
+	},
+	gradient: {
+		primary: gradientRed,
+		secondary: gradientGray
 	}
 });
 

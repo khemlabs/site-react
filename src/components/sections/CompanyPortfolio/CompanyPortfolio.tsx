@@ -121,6 +121,8 @@ const images = [
 	}
 ];
 
+const transparentBackground = 'rgba(19, 19, 19, 0.23);';
+
 const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
@@ -150,7 +152,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 
 	const pages = images[gallery].screenshots.map(screenshot => ({ style }: any) => (
 		<animated.div className={classes.transitionMain} style={style}>
-			<img src={screenshot} height="500" />
+			<img src={screenshot} className={classes.flexImage} />
 		</animated.div>
 	));
 
@@ -197,7 +199,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 					</ButtonBase>
 				))}
 			</div>
-			<Modal open={open} onClose={handleClose}>
+			<Modal open={open} onClose={handleClose} backgroundColor={transparentBackground}>
 				<Box className={classes.transitionContainer}>
 					{images[gallery].screenshots.length > 1 ? (
 						<div className={classes.transitionMain} onClick={onClick}>
@@ -207,7 +209,12 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 							})}
 						</div>
 					) : (
-						<img src={images[gallery].screenshots[0]} height="500" />
+						<div className={classes.transitionMain}>
+							<div className={classes.transitionMain}>
+								<img className={classes.flexImage} src={images[gallery].screenshots[0]} />
+							</div>
+							<img className={classes.flexImageHover} src="img/logo-small.png" />
+						</div>
 					)}
 				</Box>
 			</Modal>
@@ -307,7 +314,7 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		transitionContainer: {
 			position: 'relative',
-			width: '80vw',
+			width: '70vw',
 			height: '80vh'
 		},
 		transitionMain: {
@@ -323,6 +330,16 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontSize: '25em',
 			willChange: 'transform, opacity',
 			textShadow: '0px 2px 40px #00000020, 0px 2px 5px #00000030'
+		},
+		flexImage: {
+			maxHeight: '95%',
+			padding: theme.spacing(2),
+			background: theme.gradient.primary
+		},
+		flexImageHover: {
+			position: 'absolute',
+			bottom: '8px',
+			right: '8px'
 		},
 		title: {
 			marginBottom: theme.spacing(14),

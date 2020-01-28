@@ -50,9 +50,12 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const validateSubmit = (values: Values) => {
 		const errors: Partial<Values> = {};
 		if (!values.email) {
-			errors.email = 'Required';
+			errors.email = i18n.t('error_required');
 		} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-			errors.email = 'Invalid email address';
+			errors.email = i18n.t('error_invalid');
+		}
+		if (!values.textbody) {
+			errors.textbody = i18n.t('error_required');
 		}
 		return errors;
 	};
@@ -82,6 +85,8 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											name="email"
 											label={i18n.t('email_contact')}
 											placeholder={i18n.t('email_placeholder')}
+											variant="outlined"
+											required
 										/>
 										<TextField
 											id="outlined-multiline-static"
@@ -91,6 +96,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											rows="4"
 											fullWidth
 											variant="outlined"
+											required
 										/>
 										{isSubmitting && <LinearProgress />}
 										<Button

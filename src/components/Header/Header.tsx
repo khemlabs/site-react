@@ -73,7 +73,10 @@ const useStyles = makeStyles((theme: Theme) =>
 			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
 		},
 		link: {
-			margin: theme.spacing(1, 1.5)
+			margin: theme.spacing(1, 1.5),
+			[theme.breakpoints.down('sm')]: {
+				fontSize: theme.sizes.xSmall
+			}
 		}
 	})
 );

@@ -10,12 +10,19 @@ export interface FontSizes {
 	xLarge: number;
 }
 
+export interface Grandient {
+	primary: string;
+	secondary: string;
+}
+
 declare module '@material-ui/core/styles/createMuiTheme' {
 	interface ThemeOptions {
 		sizes: FontSizes;
+		gradient: Grandient;
 	}
 
 	interface Theme {
 		sizes: FontSizes;
+		gradient: Grandient;
 	}
 }

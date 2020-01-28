@@ -44,5 +44,7 @@
 	"message_thanks": "¡Gracias! Nuestro equipo se pondrá en contacto con usted pronto.",
 	"send_contact": "Enviar",
 	"menu_company": "menu_company",
-	"error-with-status": "Ooops! no esta donde debería estar."
+	"error-with-status": "Ooops! no esta donde debería estar.",
+	"error_required": "Campo requerido",
+	"error_invalid": "Campo invalido"
 }
