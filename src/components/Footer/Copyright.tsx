@@ -12,7 +12,7 @@ const Copyright: React.FunctionComponent = ({}): JSX.Element => {
 
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
-			{'Copyright © '}
+			{i18n.t('copyright')}
 			<Link color="inherit" href="https://khemlabs.com/" itemProp="legalName" className={classes.title}>
 				<span className={classes.variant}>khem</span>
 				<span className={classes.red}>labs</span> S.R.L

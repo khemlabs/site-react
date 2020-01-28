@@ -48,5 +48,6 @@
 	"error-with-status": "Ooops! no esta donde debería estar.",
 	"error_required": "Campo requerido",
 	"error_invalid": "Campo invalido",
-	"policy": "Política de privacidad"
+	"policy": "Política de privacidad",
+	"copyright": "Copyright © "
 }

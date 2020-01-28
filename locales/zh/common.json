@@ -48,5 +48,6 @@
 	"error-with-status": "哎呀！ 有些东西不应该在哪里",
 	"error_required": "需要",
 	"error_invalid": "无效的栏位",
-	"policy": "隐私政策"
+	"policy": "隐私政策",
+	"copyright": "版权所有©"
 }
