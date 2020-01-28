@@ -41,16 +41,16 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 				</Typography>
 				<Typography variant="body2" align="center" gutterBottom>
 					<Link itemProp="sameAs" href="https://github.com/khemlabs" target="_blank">
-						<GitHubIcon />
+						<GitHubIcon className={classes.social} />
 					</Link>
 					<Link itemProp="sameAs" href="https://twitter.com/khemlabs" target="_blank">
-						<TwitterIcon />
+						<TwitterIcon className={classes.social} />
 					</Link>
 					<Link itemProp="sameAs" href="https://www.facebook.com/khemlabs" target="_blank">
-						<FacebookIcon />
+						<FacebookIcon className={classes.social} />
 					</Link>
 					<Link itemProp="sameAs" href="https://www.linkedin.com/company/khemlabs" target="_blank">
-						<LinkedInIcon />
+						<LinkedInIcon className={classes.social} />
 					</Link>
 				</Typography>
 			</Hero>
@@ -84,6 +84,9 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		titleRed: {
 			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
+		},
+		social: {
+			margin: theme.spacing(1)
 		}
 	})
 );
