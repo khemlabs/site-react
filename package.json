@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "nodemon",
-		"build": "next build && tsc --project tsconfig.server.json",
+		"build": "next build && cp -r ./public ./dist/ && tsc --project tsconfig.server.json",
 		"start": "cross-env NODE_ENV=production node dist/index.js",
 		"deploy": "yarn build && yarn start",
 		"type-check": "tsc --project tsconfig.server.json",
