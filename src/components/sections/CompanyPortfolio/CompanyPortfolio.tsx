@@ -207,13 +207,14 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 								const Page = pages[item];
 								return <Page key={key} style={props} />;
 							})}
+							<img className={classes.flexImageHover} src="assets/img/logo-small.png" />
 						</div>
 					) : (
 						<div className={classes.transitionMain}>
 							<div className={classes.transitionMain}>
 								<img className={classes.flexImage} src={images[gallery].screenshots[0]} />
 							</div>
-							<img className={classes.flexImageHover} src="img/logo-small.png" />
+							<img className={classes.flexImageHover} src="assets/img/logo-small.png" />
 						</div>
 					)}
 				</Box>
