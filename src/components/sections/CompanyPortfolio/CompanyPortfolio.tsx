@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated, ItemKeys } from 'react-spring';
 
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
@@ -144,7 +144,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const [index, set] = useState(0);
 	const onClick = useCallback(() => set(state => (state + 1) % 3), []);
 
-	const transitions = useTransition(index, p => p, {
+	const transitions = useTransition(index, (p: any) => p, {
 		from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
 		enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
 		leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
