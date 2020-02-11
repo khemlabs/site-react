@@ -5,6 +5,7 @@ import Recaptcha from 'react-recaptcha';
 
 import { TextField } from 'formik-material-ui';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
@@ -115,18 +116,20 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											variant="outlined"
 											required
 										/>
-										<Recaptcha
-											sitekey={publicRuntimeConfig.googleRecaptchaKey}
-											render="explicit"
-											theme="dark"
-											// badge="inline"
-											verifyCallback={response => {
-												setFieldValue('recaptcha', response);
-											}}
-											onloadCallback={() => {
-												console.log('done loading!');
-											}}
-										/>
+										<Box className={classes.recaptcha}>
+											<Recaptcha
+												sitekey={publicRuntimeConfig.googleRecaptchaKey}
+												render="explicit"
+												theme="dark"
+												// badge="inline"
+												verifyCallback={response => {
+													setFieldValue('recaptcha', response);
+												}}
+												onloadCallback={() => {
+													console.log('done loading!');
+												}}
+											/>
+										</Box>
 										{errors.recaptcha && touched.recaptcha && <p>{errors.recaptcha}</p>}
 										{isSubmitting && <LinearProgress />}
 										<Button
@@ -203,6 +206,13 @@ const useStyles = makeStyles((theme: Theme) =>
 		},
 		button: {
 			width: '100%'
+		},
+		recaptcha: {
+			width: '100%',
+			padding: theme.spacing(2, 0),
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center'
 		},
 		imagesWrapper: {
 			position: 'relative'
