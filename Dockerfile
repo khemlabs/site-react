@@ -19,6 +19,7 @@ COPY --from=builder --chown=node:node /src/app/package.json ./package.json
 COPY --from=builder --chown=node:node /src/app/node_modules ./node_modules
 COPY --from=builder --chown=node:node /src/app/.next ./.next
 COPY --from=builder --chown=node:node /src/app/dist ./dist
+COPY --from=builder --chown=node:node /src/app/public ./dist/public
 COPY --from=builder --chown=node:node /src/app/locales ./locales
 COPY --from=builder --chown=node:node /src/app/next.config.js ./next.config.js
 
