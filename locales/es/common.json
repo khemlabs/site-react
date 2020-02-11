@@ -44,6 +44,7 @@
 	"message_contact": "Mensaje",
 	"message_description": "Por favor complete su correo electrónico y mensaje para contactarnos.",
 	"message_thanks": "¡Gracias! Nuestro equipo se pondrá en contacto con usted pronto.",
+	"message_fail": "¡Ooops!, something went wrong with your request",
 	"send_contact": "Enviar",
 	"error-with-status": "Ooops! no esta donde debería estar.",
 	"error_required": "Campo requerido",

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form, FormikHelpers } from 'formik';
+import getConfig from 'next/config';
+import Recaptcha from 'react-recaptcha';
+
 import { TextField } from 'formik-material-ui';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -12,24 +15,32 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import { useTranslation } from 'components/i18n';
 
+const { publicRuntimeConfig } = getConfig();
+
 interface Values {
 	email: string;
 	textbody: string;
+	recaptcha: string;
+}
+
+enum FormStatus {
+	AVAILABLE,
+	OK,
+	ERROR,
+	FAILED
 }
 
 // type OnSumitType =
 
-// Example POST method implementation:
 async function postData(url = '', data = {}) {
-	// Default options are marked with *
 	const response = await fetch(url, {
-		method: 'POST', // *GET, POST, PUT, DELETE, etc.
+		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		body: JSON.stringify(data) // body data type must match "Content-Type" header
+		body: JSON.stringify(data)
 	});
-	return await response.json(); // parses JSON response into native JavaScript objects
+	return await response.json();
 }
 
 const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
@@ -38,11 +49,16 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 
 	const handleSubmit = async (values: Values, { setSubmitting, setStatus }: FormikHelpers<Values>): Promise<void> => {
 		try {
-			await postData('/api/messages', values);
-			setStatus('OK');
+			const response = await postData('/api/messages', values);
+			console.log('responde', response);
+			if (response.result == 'ok') {
+				setStatus(FormStatus.OK);
+			} else {
+				throw 'Response error';
+			}
 		} catch (error) {
 			console.log(error);
-			setStatus('Error');
+			setStatus(FormStatus.FAILED);
 		}
 		setSubmitting(false);
 	};
@@ -69,12 +85,13 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 							<Formik
 								initialValues={{
 									email: '',
-									textbody: ''
+									textbody: '',
+									recaptcha: ''
 								}}
 								validate={validateSubmit}
 								onSubmit={handleSubmit}
 							>
-								{({ submitForm, isSubmitting, status, setStatus }) => (
+								{({ submitForm, errors, touched, isSubmitting, status, setStatus, setFieldValue }) => (
 									<Form className={classes.cardContent} method="post" action="api/messages">
 										<Typography variant="h2" component="h2" gutterBottom>
 											{i18n.t('menu_contact')}
@@ -98,6 +115,19 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											variant="outlined"
 											required
 										/>
+										<Recaptcha
+											sitekey={publicRuntimeConfig.googleRecaptchaKey}
+											render="explicit"
+											theme="dark"
+											// badge="inline"
+											verifyCallback={response => {
+												setFieldValue('recaptcha', response);
+											}}
+											onloadCallback={() => {
+												console.log('done loading!');
+											}}
+										/>
+										{errors.recaptcha && touched.recaptcha && <p>{errors.recaptcha}</p>}
 										{isSubmitting && <LinearProgress />}
 										<Button
 											color="primary"
@@ -109,10 +139,16 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											{i18n.t('send_contact')}
 										</Button>
 										<Snackbar
-											open={status == 'OK'}
-											onClose={() => setStatus('SEND')}
+											open={status == FormStatus.OK}
+											onClose={() => setStatus(FormStatus.AVAILABLE)}
 											autoHideDuration={2000}
 											message={i18n.t('message_thanks')}
+										/>
+										<Snackbar
+											open={status == FormStatus.FAILED}
+											onClose={() => setStatus(FormStatus.AVAILABLE)}
+											autoHideDuration={2000}
+											message={i18n.t('message_fail')}
 										/>
 									</Form>
 								)}

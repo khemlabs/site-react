@@ -44,6 +44,7 @@
 	"message_contact": "信息",
 	"message_description": "请完成您的电子邮件和消息以与我们联系。",
 	"message_thanks": "谢谢！，我们的团队会尽快与您联系。",
+	"message_fail": "抱歉！您的请求出了点问题",
 	"send_contact": "发送",
 	"error-with-status": "哎呀！ 有些东西不应该在哪里",
 	"error_required": "需要",

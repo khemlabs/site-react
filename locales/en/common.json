@@ -44,6 +44,7 @@
 	"message_contact": "Message",
 	"message_description": "Please complete your email and message to contact us.",
 	"message_thanks": "Thanks!, Our team will contact you soon.",
+	"message_fail": "Sorry!, something went wrong with your request",
 	"send_contact": "Send",
 	"error-with-status": "Ooops! something is not where it should be",
 	"error_required": "Required",

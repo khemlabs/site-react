@@ -13,6 +13,11 @@ class MyApp extends App {
 		if (jssStyles) {
 			jssStyles.parentElement!.removeChild(jssStyles);
 		}
+		const rescript = document.createElement('script');
+		rescript.src = 'https://www.google.com/recaptcha/api.js';
+		rescript.async = true;
+		rescript.defer = true;
+		document.body.appendChild(rescript);
 	}
 	render() {
 		const { Component, pageProps } = this.props;

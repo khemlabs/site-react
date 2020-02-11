@@ -1,4 +1,5 @@
 import { NextApiResponse, NextApiRequest } from 'next';
+import axios, { AxiosRequestConfig } from 'axios';
 
 type DataEmail = {
 	email: string;
@@ -8,10 +9,11 @@ type DataEmail = {
 type EmailType = {
 	email: string;
 	textbody: string;
+	recaptcha: string;
 };
 
 const redis = require('redis'),
-	log = require('./Log'),
+	log = require('components/Messages/Log'),
 	nodemailer = require('nodemailer'),
 	client = redis.createClient(6379, 'db');
 
@@ -20,6 +22,27 @@ let transporter: any;
 
 // REDIS CLIENT
 client.on('error', (err: Error) => log.error(err, 'services/message', 'save'));
+
+async function validateRecaptcha(data: EmailType) {
+	try {
+		if (process.env.GOOGLE_RECAPTCHA_SECRET) {
+			const config: AxiosRequestConfig = {
+				url: 'https://www.google.com/recaptcha/api/siteverify',
+				method: 'POST',
+				params: {
+					secret: process.env.GOOGLE_RECAPTCHA_SECRET,
+					response: data.recaptcha
+				}
+			};
+			const response = await axios(config);
+
+			return response.data;
+		}
+	} catch (e) {
+		console.error(e);
+		log.error('Cannot validate google recaptcha', 'services/emailService', 'validateRecaptcha');
+	}
+}
 
 const getTransporter = () => {
 	if (transporter) return transporter;
@@ -91,8 +114,9 @@ const save = (data: NextApiRequest & EmailType) => {
 	client.sadd('messages', JSON.stringify(data));
 };
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-	if (req.method == 'POST') {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+	const recaptcha = await validateRecaptcha(req.body);
+	if (recaptcha.success && req.method == 'POST') {
 		save(req.body);
 
 		res.setHeader('Content-Type', 'application/json');
