@@ -30,8 +30,9 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 						className={classes.link}
 					>
 						<img itemProp="logo" src="./assets/img/logo-brand.png" />
+						<meta itemProp="image" content="./assets/img/logo-brand.png" />
 					</Link>
-					<span itemProp="name">
+					<span>
 						<strong className={classes.titleVariant}>khem</strong>
 						<strong className={classes.titleRed}>labs</strong>
 					</span>
@@ -69,25 +70,25 @@ const useStyles = makeStyles((theme: Theme) =>
 			[theme.breakpoints.up('sm')]: {
 				height: '80vh',
 				minHeight: 500,
-				maxHeight: 1300
-			}
+				maxHeight: 1300,
+			},
 		},
 		heroContent: {
-			padding: theme.spacing(8, 0, 6)
+			padding: theme.spacing(8, 0, 6),
 		},
 		link: {
 			display: 'block',
-			margin: theme.spacing(1, 1.5)
+			margin: theme.spacing(1, 1.5),
 		},
 		titleVariant: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText
+			color: theme.palette.type === 'light' ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText,
 		},
 		titleRed: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
+			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark,
 		},
 		social: {
-			margin: theme.spacing(1)
-		}
+			margin: theme.spacing(1),
+		},
 	})
 );
 

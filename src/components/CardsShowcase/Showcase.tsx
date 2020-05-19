@@ -45,7 +45,7 @@ const Showcase: React.FunctionComponent<ShowcaseProps> = ({ cards, children }): 
 					itemScope
 					itemType="http://schema.org/Offer"
 				>
-					<div {...card.containerProps}>
+					<div {...card.containerProps} itemprop="offers">
 						<Card
 							title={card.title ? card.title : null}
 							subheader={card.subtitle ? card.subtitle : null}
@@ -53,6 +53,9 @@ const Showcase: React.FunctionComponent<ShowcaseProps> = ({ cards, children }): 
 						>
 							{card.body}
 						</Card>
+						<meta itemProp="availability" content="https://schema.org/InStock" />
+						<meta itemProp="priceCurrency" content="USD" />
+						<meta itemProp="price" content="35.0/h" />
 					</div>
 				</Grid>
 			))}
@@ -69,14 +72,14 @@ const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		gridFluid: {
 			width: '100%',
-			margin: 0
+			margin: 0,
 		},
 		cardBody: {
 			display: 'flex',
 			justifyContent: 'center',
 			alignItems: 'baseline',
-			marginBottom: theme.spacing(2)
-		}
+			marginBottom: theme.spacing(2),
+		},
 	})
 );
 

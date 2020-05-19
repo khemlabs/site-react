@@ -22,8 +22,13 @@ const images = [
 			'./assets/img/portfolio/radiod/RadioD-3.png',
 			'./assets/img/portfolio/radiod/RadioD-4.png',
 			'./assets/img/portfolio/radiod/RadioD-5.png',
-			'./assets/img/portfolio/radiod/RadioD-6.png'
-		]
+			'./assets/img/portfolio/radiod/RadioD-6.png',
+		],
+		itemType: 'http://schema.org/MobileApplication',
+		itemCategory: 'http://schema.org/EntertainmentApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/ozono/Ozono1.png',
@@ -34,8 +39,13 @@ const images = [
 			'./assets/img/portfolio/ozono/Ozono2.png',
 			'./assets/img/portfolio/ozono/Ozono3.png',
 			'./assets/img/portfolio/ozono/Ozono4.png',
-			'./assets/img/portfolio/ozono/Ozono5.png'
-		]
+			'./assets/img/portfolio/ozono/Ozono5.png',
+		],
+		itemType: 'http://schema.org/WebApplication',
+		itemCategory: 'http://schema.org/EntertainmentApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/fuerzaglobal/Fuerzaglobal-1.png',
@@ -44,8 +54,13 @@ const images = [
 		screenshots: [
 			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-1.png',
 			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-2.png',
-			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-3.png'
-		]
+			'./assets/img/portfolio/fuerzaglobal/Fuerzaglobal-3.png',
+		],
+		itemType: 'http://schema.org/WebApplication',
+		itemCategory: 'http://schema.org/EntertainmentApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/comicopolis/Comicopolis-1.png',
@@ -55,8 +70,13 @@ const images = [
 			'./assets/img/portfolio/comicopolis/Comicopolis-1.png',
 			'./assets/img/portfolio/comicopolis/Comicopolis-2.png',
 			'./assets/img/portfolio/comicopolis/Comicopolis-3.png',
-			'./assets/img/portfolio/comicopolis/Comicopolis-4.png'
-		]
+			'./assets/img/portfolio/comicopolis/Comicopolis-4.png',
+		],
+		itemType: 'http://schema.org/WebApplication',
+		itemCategory: 'http://schema.org/CommunicationApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/bonaparte/sigpa1.png',
@@ -65,8 +85,13 @@ const images = [
 		screenshots: [
 			'./assets/img/portfolio/bonaparte/sigpa1.png',
 			'./assets/img/portfolio/bonaparte/sigpa2.png',
-			'./assets/img/portfolio/bonaparte/sigpa3.png'
-		]
+			'./assets/img/portfolio/bonaparte/sigpa3.png',
+		],
+		itemType: 'http://schema.org/SoftwareApplication',
+		itemCategory: 'http://schema.org/HealthApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/bear/Bear1.png',
@@ -75,14 +100,24 @@ const images = [
 		screenshots: [
 			'./assets/img/portfolio/bear/Bear1.png',
 			'./assets/img/portfolio/bear/Bear2.png',
-			'./assets/img/portfolio/bear/Bear7.png'
-		]
+			'./assets/img/portfolio/bear/Bear7.png',
+		],
+		itemType: 'http://schema.org/WebApplication',
+		itemCategory: 'http://schema.org/LifestyleApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/oxigeno/Oxigeno-1.png',
 		title: 'Oxigeno',
 		width: '40%',
-		screenshots: ['./assets/img/portfolio/oxigeno/Oxigeno-1.png']
+		screenshots: ['./assets/img/portfolio/oxigeno/Oxigeno-1.png'],
+		itemType: 'http://schema.org/SoftwareApplication',
+		itemCategory: 'http://schema.org/BusinessApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/jornadas/Jornadas-1.png',
@@ -94,8 +129,13 @@ const images = [
 			'./assets/img/portfolio/jornadas/Jornadas-3.png',
 			'./assets/img/portfolio/jornadas/Jornadas-4.png',
 			'./assets/img/portfolio/jornadas/Jornadas-5.png',
-			'./assets/img/portfolio/jornadas/Jornadas-6.png'
-		]
+			'./assets/img/portfolio/jornadas/Jornadas-6.png',
+		],
+		itemType: 'http://schema.org/MobileApplication',
+		itemCategory: 'http://schema.org/CommunicationApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/worcket/Worcket-1.png',
@@ -105,8 +145,13 @@ const images = [
 			'./assets/img/portfolio/worcket/Worcket-1.png',
 			'./assets/img/portfolio/worcket/Worcket-2.png',
 			'./assets/img/portfolio/worcket/Worcket-3.png',
-			'./assets/img/portfolio/worcket/Worcket-4.png'
-		]
+			'./assets/img/portfolio/worcket/Worcket-4.png',
+		],
+		itemType: 'http://schema.org/MobileApplication',
+		itemCategory: 'http://schema.org/SocialNetworkingApplication',
+		offers: {
+			price: '0',
+		},
 	},
 	{
 		url: './assets/img/portfolio/quickicks/Quickicks-1.png',
@@ -116,9 +161,14 @@ const images = [
 			'./assets/img/portfolio/quickicks/Quickicks-1.png',
 			'./assets/img/portfolio/quickicks/Quickicks-2.png',
 			'./assets/img/portfolio/quickicks/Quickicks-3.png',
-			'./assets/img/portfolio/quickicks/Quickicks-4.png'
-		]
-	}
+			'./assets/img/portfolio/quickicks/Quickicks-4.png',
+		],
+		itemType: 'http://schema.org/MobileApplication',
+		itemCategory: 'http://schema.org/SportsApplication',
+		offers: {
+			price: '0',
+		},
+	},
 ];
 
 const transparentBackground = 'rgba(19, 19, 19, 0.23);';
@@ -142,15 +192,15 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	};
 
 	const [index, set] = useState(0);
-	const onClick = useCallback(() => set(state => (state + 1) % 3), []);
+	const onClick = useCallback(() => set((state) => (state + 1) % 3), []);
 
 	const transitions = useTransition(index, (p: any) => p, {
 		from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
 		enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-		leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' }
+		leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
 	});
 
-	const pages = images[gallery].screenshots.map(screenshot => ({ style }: any) => (
+	const pages = images[gallery].screenshots.map((screenshot) => ({ style }: any) => (
 		<animated.div className={classes.transitionMain} style={style}>
 			<img src={screenshot} className={classes.flexImage} />
 		</animated.div>
@@ -175,18 +225,19 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 						key={image.title}
 						className={classes.imageWrapper}
 						style={{
-							width: image.width
+							width: image.width,
 						}}
 						onClick={() => handleOpen(index)}
 						itemProp="itemListElement"
 						itemScope
-						itemType="http://schema.org/Product"
+						itemType={image.itemType}
 					>
+						<meta itemProp="applicationCategory" content={image.itemCategory} />
 						<div
 							className={classes.imageSrc}
 							itemProp="image"
 							style={{
-								backgroundImage: `url(${image.url})`
+								backgroundImage: `url(${image.url})`,
 							}}
 						/>
 						<div className={classes.imageBackdrop} />
@@ -195,6 +246,9 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 								{image.title}
 								<div className={classes.imageMarked} />
 							</Typography>
+						</div>
+						<div itemProp="offers" style={{ display: 'none' }}>
+							<meta itemProp="price" content={image.offers.price} />
 						</div>
 					</ButtonBase>
 				))}
@@ -227,14 +281,14 @@ const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
 			marginTop: theme.spacing(8),
-			marginBottom: theme.spacing(4)
+			marginBottom: theme.spacing(4),
 			// backgroundImage: 'url("./assets/img/team-2.jpg"',
 			// backgroundAttachment: 'fixed'
 		},
 		images: {
 			marginTop: theme.spacing(8),
 			display: 'flex',
-			flexWrap: 'wrap'
+			flexWrap: 'wrap',
 		},
 		imageWrapper: {
 			position: 'relative',
@@ -244,20 +298,20 @@ const useStyles = makeStyles((theme: Theme) =>
 			height: '40vh',
 			[theme.breakpoints.down('sm')]: {
 				width: '100% !important',
-				height: 100
+				height: 100,
 			},
 			'&:hover': {
-				zIndex: 1
+				zIndex: 1,
 			},
 			'&:hover $imageBackdrop': {
-				opacity: 0.15
+				opacity: 0.15,
 			},
 			'&:hover $imageMarked': {
-				opacity: 0
+				opacity: 0,
 			},
 			'&:hover $imageTitle': {
-				border: '4px solid currentColor'
-			}
+				border: '4px solid currentColor',
+			},
 		},
 		imageButton: {
 			position: 'absolute',
@@ -268,7 +322,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
-			color: theme.palette.common.white
+			color: theme.palette.common.white,
 		},
 		imageSrc: {
 			position: 'absolute',
@@ -277,7 +331,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			top: 0,
 			bottom: 0,
 			backgroundSize: 'cover',
-			backgroundPosition: 'center 40%'
+			backgroundPosition: 'center 40%',
 		},
 		imageBackdrop: {
 			position: 'absolute',
@@ -287,11 +341,11 @@ const useStyles = makeStyles((theme: Theme) =>
 			bottom: 0,
 			background: theme.palette.common.black,
 			opacity: 0.5,
-			transition: theme.transitions.create('opacity')
+			transition: theme.transitions.create('opacity'),
 		},
 		imageTitle: {
 			position: 'relative',
-			padding: `${theme.spacing(2)}px ${theme.spacing(4)}px 14px`
+			padding: `${theme.spacing(2)}px ${theme.spacing(4)}px 14px`,
 		},
 		imageMarked: {
 			height: 3,
@@ -300,23 +354,23 @@ const useStyles = makeStyles((theme: Theme) =>
 			position: 'absolute',
 			bottom: -2,
 			left: 'calc(50% - 9px)',
-			transition: theme.transitions.create('opacity')
+			transition: theme.transitions.create('opacity'),
 		},
 		modal: {
 			display: 'flex',
 			alignItems: 'center',
-			justifyContent: 'center'
+			justifyContent: 'center',
 		},
 		paper: {
 			backgroundColor: theme.palette.background.paper,
 			border: '2px solid #000',
 			boxShadow: theme.shadows[5],
-			padding: theme.spacing(2, 4, 3)
+			padding: theme.spacing(2, 4, 3),
 		},
 		transitionContainer: {
 			position: 'relative',
 			width: '70vw',
-			height: '80vh'
+			height: '80vh',
 		},
 		transitionMain: {
 			cursor: 'pointer',
@@ -330,23 +384,23 @@ const useStyles = makeStyles((theme: Theme) =>
 			fontWeight: 800,
 			fontSize: '25em',
 			willChange: 'transform, opacity',
-			textShadow: '0px 2px 40px #00000020, 0px 2px 5px #00000030'
+			textShadow: '0px 2px 40px #00000020, 0px 2px 5px #00000030',
 		},
 		flexImage: {
 			maxHeight: '95%',
 			padding: theme.spacing(2),
-			background: theme.gradient.primary
+			background: theme.gradient.primary,
 		},
 		flexImageHover: {
 			position: 'absolute',
 			bottom: '0px',
-			right: '8px'
+			right: '8px',
 		},
 		title: {
 			marginBottom: theme.spacing(14),
 			color: theme.palette.primary.contrastText,
-			textAlign: 'center'
-		}
+			textAlign: 'center',
+		},
 	})
 );
 

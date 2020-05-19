@@ -13,9 +13,10 @@ const Copyright: React.FunctionComponent = ({}): JSX.Element => {
 	return (
 		<Typography variant="body2" color="textSecondary" align="center">
 			{i18n.t('copyright')}
-			<Link color="inherit" href="https://khemlabs.com/" itemProp="legalName" className={classes.title}>
+			<Link color="inherit" href="https://khemlabs.com/" className={classes.title}>
 				<span className={classes.variant}>khem</span>
 				<span className={classes.red}>labs</span> S.R.L
+				<meta itemProp="legalName" content="Khem Labs S.R.L" />
 			</Link>{' '}
 			{new Date().getFullYear()}
 			{'.'}
@@ -26,14 +27,14 @@ const Copyright: React.FunctionComponent = ({}): JSX.Element => {
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		title: {
-			fontFamily: 'Ubuntu'
+			fontFamily: 'Ubuntu',
 		},
 		variant: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.dark : theme.palette.secondary.light
+			color: theme.palette.type === 'light' ? theme.palette.secondary.dark : theme.palette.secondary.light,
 		},
 		red: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
-		}
+			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark,
+		},
 	})
 );
 

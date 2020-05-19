@@ -18,7 +18,7 @@ const Service: React.FunctionComponent<ServiceProps> = ({ image, title, descript
 	const classes = useStyles();
 
 	return (
-		<Card>
+		<Card itemProp="offers">
 			<CardActionArea>
 				<CardMedia itemProp="image" className={classes.media} image={image} title={title} />
 				<CardContent className={classes.background}>
@@ -29,6 +29,9 @@ const Service: React.FunctionComponent<ServiceProps> = ({ image, title, descript
 						{description}
 					</Typography>
 				</CardContent>
+				<meta itemProp="availability" content="https://schema.org/InStock" />
+				<meta itemProp="priceCurrency" content="USD" />
+				<meta itemProp="price" content="35.0/h" />
 			</CardActionArea>
 		</Card>
 	);
@@ -37,11 +40,11 @@ const Service: React.FunctionComponent<ServiceProps> = ({ image, title, descript
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		media: {
-			height: 400
+			height: 400,
 		},
 		background: {
-			backgroundColor: theme.palette.common.white
-		}
+			backgroundColor: theme.palette.common.white,
+		},
 	})
 );
 

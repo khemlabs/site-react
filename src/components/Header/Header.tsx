@@ -19,6 +19,7 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 				<Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
 					<span className={classes.titleVariant}>khem</span>
 					<span className={classes.titleRed}>labs</span>
+					<meta itemProp="name" content="Khem Labs" />
 				</Typography>
 				<nav>
 					<Link variant="button" color="textPrimary" href="#about-us" className={classes.link}>
@@ -50,34 +51,34 @@ const useStyles = makeStyles((theme: Theme) =>
 		'@global': {
 			ul: {
 				margin: 0,
-				padding: 0
+				padding: 0,
 			},
 			li: {
-				listStyle: 'none'
-			}
+				listStyle: 'none',
+			},
 		},
 		appBar: {
-			borderBottom: `1px solid ${theme.palette.divider}`
+			borderBottom: `1px solid ${theme.palette.divider}`,
 		},
 		toolbar: {
-			flexWrap: 'wrap'
+			flexWrap: 'wrap',
 		},
 		toolbarTitle: {
 			flexGrow: 1,
-			fontFamily: 'Ubuntu'
+			fontFamily: 'Ubuntu',
 		},
 		titleVariant: {
-			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark
+			color: theme.palette.type === 'light' ? theme.palette.secondary.light : theme.palette.secondary.dark,
 		},
 		titleRed: {
-			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark
+			color: theme.palette.type === 'light' ? theme.palette.primary.light : theme.palette.primary.dark,
 		},
 		link: {
 			margin: theme.spacing(1, 1.5),
 			[theme.breakpoints.down('sm')]: {
-				fontSize: theme.sizes.xSmall
-			}
-		}
+				fontSize: theme.sizes.xSmall,
+			},
+		},
 	})
 );
 
