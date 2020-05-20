@@ -16,10 +16,10 @@ const Copyright: React.FunctionComponent = ({}): JSX.Element => {
 			<Link color="inherit" href="https://khemlabs.com/" className={classes.title}>
 				<span className={classes.variant}>khem</span>
 				<span className={classes.red}>labs</span> S.R.L
-				<meta itemProp="legalName" content="Khem Labs S.R.L" />
 			</Link>{' '}
 			{new Date().getFullYear()}
 			{'.'}
+			<meta itemProp="legalName" content="Khem Labs S.R.L" />
 		</Typography>
 	);
 };

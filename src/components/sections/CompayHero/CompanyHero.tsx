@@ -30,8 +30,8 @@ const CompanyHero: React.FunctionComponent = ({}): JSX.Element => {
 						className={classes.link}
 					>
 						<img itemProp="logo" src="./assets/img/logo-brand.png" />
-						<meta itemProp="image" content="./assets/img/logo-brand.png" />
 					</Link>
+					<meta itemProp="image" content="./assets/img/logo-brand.png" />
 					<span>
 						<strong className={classes.titleVariant}>khem</strong>
 						<strong className={classes.titleRed}>labs</strong>

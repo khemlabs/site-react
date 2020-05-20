@@ -28,10 +28,10 @@ const Service: React.FunctionComponent<ServiceProps> = ({ image, title, descript
 					<Typography itemProp="description" variant="body2" color="textSecondary" component="p">
 						{description}
 					</Typography>
+					<meta itemProp="availability" content="https://schema.org/InStock" />
+					<meta itemProp="priceCurrency" content="USD" />
+					<meta itemProp="price" content="35.0/h" />
 				</CardContent>
-				<meta itemProp="availability" content="https://schema.org/InStock" />
-				<meta itemProp="priceCurrency" content="USD" />
-				<meta itemProp="price" content="35.0/h" />
 			</CardActionArea>
 		</Card>
 	);

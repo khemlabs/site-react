@@ -99,6 +99,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 										</Typography>
 										<Typography variant="h5">{i18n.t('message_description')}</Typography>
 										<Field
+											name="client-email"
 											component={TextField}
 											className={classes.textField}
 											label={i18n.t('email_contact')}
@@ -107,6 +108,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											required
 										/>
 										<Field
+											name="client-message"
 											component={TextField}
 											label={i18n.t('message_contact')}
 											multiline
@@ -115,23 +117,6 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											variant="outlined"
 											required
 										/>
-										{/* <TextField
-											id="client-email"
-											className={classes.textField}
-											label={i18n.t('email_contact')}
-											placeholder={i18n.t('email_placeholder')}
-											variant="outlined"
-											required
-										/>
-										<TextField
-											id="client-message"
-											label={i18n.t('message_contact')}
-											multiline
-											rows="4"
-											fullWidth
-											variant="outlined"
-											required
-										/> */}
 										<Box className={classes.recaptcha}>
 											<Recaptcha
 												sitekey={publicRuntimeConfig.googleRecaptchaKey}
