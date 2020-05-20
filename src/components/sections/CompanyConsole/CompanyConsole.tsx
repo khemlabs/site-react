@@ -17,14 +17,14 @@ const CompanyConsole: React.FunctionComponent = ({}): JSX.Element => {
 		from: { opacity: 1 },
 		to: { opacity: 0 },
 		reverse: reset,
-		onRest: () => setReset(!reset)
+		onRest: () => setReset(!reset),
 	});
 
 	return (
 		<Container maxWidth="xl" component="section" className={classes.container}>
 			<Box className={classes.container}>
 				<Typography variant="body2" display="inline" className={classes.console}>
-					>
+					&gt;
 					{/* <Spring from={{ opacity: 1 }} to={{ opacity: 0 }} reverse={reset} onRest={() => setReset(!reset)}>
 						{(props: any) => (
 							<animated.span className={classes.consoleText} style={props}>
@@ -50,19 +50,19 @@ const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		container: {
 			padding: theme.spacing(8, 0, 6),
-			backgroundColor: theme.palette.common.black
+			backgroundColor: theme.palette.common.black,
 		},
 		content: {
-			padding: theme.spacing(2)
+			padding: theme.spacing(2),
 		},
 		console: {
 			padding: theme.spacing(0, 4),
 			color: theme.palette.common.white,
-			fontSize: theme.sizes.large
+			fontSize: theme.sizes.large,
 		},
 		consoleText: {
-			padding: theme.spacing(0, 1)
-		}
+			padding: theme.spacing(0, 1),
+		},
 	})
 );
 

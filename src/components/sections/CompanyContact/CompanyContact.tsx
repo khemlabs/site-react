@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Formik, Form, FormikHelpers } from 'formik';
+import { Formik, Form, FormikHelpers, Field } from 'formik';
 import getConfig from 'next/config';
 import Recaptcha from 'react-recaptcha';
 
@@ -28,7 +28,7 @@ enum FormStatus {
 	AVAILABLE,
 	OK,
 	ERROR,
-	FAILED
+	FAILED,
 }
 
 // type OnSumitType =
@@ -37,9 +37,9 @@ async function postData(url = '', data = {}) {
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(data)
+		body: JSON.stringify(data),
 	});
 	return await response.json();
 }
@@ -87,7 +87,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 								initialValues={{
 									email: '',
 									textbody: '',
-									recaptcha: ''
+									recaptcha: '',
 								}}
 								validate={validateSubmit}
 								onSubmit={handleSubmit}
@@ -98,31 +98,47 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											{i18n.t('menu_contact')}
 										</Typography>
 										<Typography variant="h5">{i18n.t('message_description')}</Typography>
-										<TextField
+										<Field
+											component={TextField}
 											className={classes.textField}
-											name="email"
 											label={i18n.t('email_contact')}
 											placeholder={i18n.t('email_placeholder')}
 											variant="outlined"
 											required
 										/>
-										<TextField
-											id="outlined-multiline-static"
+										<Field
+											component={TextField}
 											label={i18n.t('message_contact')}
-											name="textbody"
 											multiline
 											rows="4"
 											fullWidth
 											variant="outlined"
 											required
 										/>
+										{/* <TextField
+											id="client-email"
+											className={classes.textField}
+											label={i18n.t('email_contact')}
+											placeholder={i18n.t('email_placeholder')}
+											variant="outlined"
+											required
+										/>
+										<TextField
+											id="client-message"
+											label={i18n.t('message_contact')}
+											multiline
+											rows="4"
+											fullWidth
+											variant="outlined"
+											required
+										/> */}
 										<Box className={classes.recaptcha}>
 											<Recaptcha
 												sitekey={publicRuntimeConfig.googleRecaptchaKey}
 												render="explicit"
 												theme="dark"
 												// badge="inline"
-												verifyCallback={response => {
+												verifyCallback={(response) => {
 													setFieldValue('recaptcha', response);
 												}}
 												onloadCallback={() => {
@@ -177,7 +193,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundColor: theme.palette.common.white,
 			marginTop: theme.spacing(10),
 			marginBottom: 0,
-			display: 'flex'
+			display: 'flex',
 		},
 		container: {
 			marginTop: theme.spacing(10),
@@ -185,37 +201,37 @@ const useStyles = makeStyles((theme: Theme) =>
 			position: 'relative',
 			display: 'flex',
 			flexDirection: 'column',
-			alignItems: 'center'
+			alignItems: 'center',
 		},
 		cardWrapper: {
-			zIndex: 1
+			zIndex: 1,
 		},
 		card: {
 			display: 'flex',
 			justifyContent: 'center',
 			backgroundColor: theme.palette.primary.dark,
-			padding: theme.spacing(8, 3)
+			padding: theme.spacing(8, 3),
 		},
 		cardContent: {
-			maxWidth: 400
+			maxWidth: 400,
 		},
 		textField: {
 			width: '100%',
 			marginTop: theme.spacing(3),
-			marginBottom: theme.spacing(2)
+			marginBottom: theme.spacing(2),
 		},
 		button: {
-			width: '100%'
+			width: '100%',
 		},
 		recaptcha: {
 			width: '100%',
 			padding: theme.spacing(2, 0),
 			display: 'flex',
 			justifyContent: 'center',
-			alignItems: 'center'
+			alignItems: 'center',
 		},
 		imagesWrapper: {
-			position: 'relative'
+			position: 'relative',
 		},
 		imageDots: {
 			position: 'absolute',
@@ -224,7 +240,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			right: 0,
 			bottom: 0,
 			width: '100%',
-			background: 'url(/static/onepirate/productCTAImageDots.png)'
+			background: 'url(/static/onepirate/productCTAImageDots.png)',
 		},
 		image: {
 			position: 'absolute',
@@ -233,8 +249,8 @@ const useStyles = makeStyles((theme: Theme) =>
 			right: 0,
 			bottom: 0,
 			width: '100%',
-			maxWidth: 600
-		}
+			maxWidth: 600,
+		},
 	})
 );
 
