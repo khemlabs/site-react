@@ -45,7 +45,7 @@ const Showcase: React.FunctionComponent<ShowcaseProps> = ({ cards, children }): 
 					itemScope
 					itemType="http://schema.org/Offer"
 				>
-					<div {...card.containerProps} itemprop="offers">
+					<div {...card.containerProps} itemProp="offers">
 						<Card
 							title={card.title ? card.title : null}
 							subheader={card.subtitle ? card.subtitle : null}

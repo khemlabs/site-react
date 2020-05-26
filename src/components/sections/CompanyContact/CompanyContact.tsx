@@ -15,6 +15,7 @@ import Button from '@material-ui/core/Button';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
 import { useTranslation } from 'components/i18n';
+import { conversion } from 'lib/gtag';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -51,14 +52,14 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const handleSubmit = async (values: Values, { setSubmitting, setStatus }: FormikHelpers<Values>): Promise<void> => {
 		try {
 			const response = await postData('/api/messages', values);
-			console.log('responde', response);
 			if (response.result == 'ok') {
+				conversion();
 				setStatus(FormStatus.OK);
 			} else {
 				throw 'Response error';
 			}
 		} catch (error) {
-			console.log(error);
+			console.warn(error);
 			setStatus(FormStatus.FAILED);
 		}
 		setSubmitting(false);

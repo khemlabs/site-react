@@ -21,7 +21,7 @@ import CompanyTeam from 'components/sections/CompanyTeam/CompanyTeam';
 
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import { useTranslation } from 'components/i18n';
+import { useTranslation, withTranslation } from 'components/i18n';
 import Link from 'components/Link';
 
 // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -39,7 +39,7 @@ const Copyright: React.FunctionComponent = () => {
 	);
 };
 
-export default function Index(): JSX.Element {
+function Index(): JSX.Element {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
 
@@ -71,13 +71,19 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundImage: 'url("./assets/img/backgrounds/nodes.jpg")',
 			backgroundPosition: 'right top',
 			backgroundRepeat: 'no-repeat',
-			backgroundAttachment: 'fixed'
+			backgroundAttachment: 'fixed',
 		},
 		placeholder: {
 			height: 64,
 			[theme.breakpoints.up('sm')]: {
-				height: 70
-			}
-		}
+				height: 70,
+			},
+		},
 	})
 );
+
+Index.getInitialProps = async () => ({
+	namespacesRequired: ['common'],
+});
+
+export default withTranslation('common')(Index);
