@@ -52,9 +52,11 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 	const handleSubmit = async (values: Values, { setSubmitting, setStatus }: FormikHelpers<Values>): Promise<void> => {
 		try {
 			const response = await postData('/api/messages', values);
+			console.log('Sending message to Khem Labs...');
 			if (response.result == 'ok') {
 				conversion();
 				setStatus(FormStatus.OK);
+				console.log('Message sended :-D');
 			} else {
 				throw 'Response error';
 			}
@@ -100,7 +102,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 										</Typography>
 										<Typography variant="h5">{i18n.t('message_description')}</Typography>
 										<Field
-											name="client-email"
+											name="email"
 											component={TextField}
 											className={classes.textField}
 											label={i18n.t('email_contact')}
@@ -109,7 +111,7 @@ const CompanyPortfolio: React.FunctionComponent = ({}): JSX.Element => {
 											required
 										/>
 										<Field
-											name="client-message"
+											name="textbody"
 											component={TextField}
 											label={i18n.t('message_contact')}
 											multiline

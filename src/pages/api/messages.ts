@@ -31,8 +31,8 @@ async function validateRecaptcha(data: EmailType) {
 				method: 'POST',
 				params: {
 					secret: process.env.GOOGLE_RECAPTCHA_SECRET,
-					response: data.recaptcha
-				}
+					response: data.recaptcha,
+				},
 			};
 			const response = await axios(config);
 
@@ -66,7 +66,7 @@ const getTransporter = () => {
 					user: process.env.GMAIL_OAUTH_USERNAME,
 					clientId: process.env.GMAIL_OAUTH_CLIENT_ID,
 					clientSecret: process.env.GMAIL_OAUTH_CLIENT_SECRET,
-					refreshToken: process.env.GMAIL_OAUTH_REFRESH_TOKEN
+					refreshToken: process.env.GMAIL_OAUTH_REFRESH_TOKEN,
 				};
 				transporter = nodemailer.createTransport({ service: 'gmail', auth });
 				return transporter;
@@ -99,7 +99,7 @@ const email = (data: DataEmail) => {
 			Email: ${data.email}<br> 
 			Message: <br>
 			${data.textbody}
-			</p>`
+			</p>`,
 	};
 	transporter.sendMail(config);
 	return;
@@ -108,7 +108,7 @@ const email = (data: DataEmail) => {
 const save = (data: NextApiRequest & EmailType) => {
 	const dataEmail = {
 		email: data.email,
-		textbody: data.textbody
+		textbody: data.textbody,
 	};
 	email(dataEmail);
 	client.sadd('messages', JSON.stringify(data));
@@ -132,7 +132,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 export const config = {
 	api: {
 		bodyParser: {
-			sizeLimit: '500kb'
-		}
-	}
+			sizeLimit: '500kb',
+		},
+	},
 };
