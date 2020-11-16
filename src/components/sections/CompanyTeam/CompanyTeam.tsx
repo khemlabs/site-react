@@ -66,37 +66,6 @@ const CompanyTeam: React.FunctionComponent = ({}): JSX.Element => {
 							description={i18n.t('description_vicpicchio')}
 						/>
 					</Grid>
-					<Grid item xs={12} md={6} itemProp="employee" itemScope itemType="http://schema.org/Person">
-						<TeamMember
-							name="Alexis Schapiro"
-							link="https://www.linkedin.com/in/alexis-schapiro-1b921a190"
-							image="./assets/img/team/alexis.png"
-							description={i18n.t('description_developer')}
-						/>
-					</Grid>
-					<Grid item xs={12} md={6} itemProp="employee" itemScope itemType="http://schema.org/Person">
-						<TeamMember
-							name="Macarena Mosquera"
-							link="https://www.linkedin.com/in/macarena-mosquera-8460459a/"
-							image="./assets/img/team/maca.png"
-							description={i18n.t('description_mmosquera')}
-						/>
-					</Grid>
-					<Grid item xs={12} md={6} itemProp="employee" itemScope itemType="http://schema.org/Person">
-						<TeamMember
-							name="Leandro Laiño"
-							link="https://www.linkedin.com/in/leandrojavierlaino"
-							image="./assets/img/team/leandro.png"
-							description={i18n.t('description_developer')}
-						/>
-					</Grid>
-					<Grid item xs={12} md={6} itemProp="employee" itemScope itemType="http://schema.org/Person">
-						<TeamMember
-							name="Vanesa Alegre"
-							image="./assets/img/team/vane.png"
-							description={i18n.t('description_valegre')}
-						/>
-					</Grid>
 				</Grid>
 			</Container>
 		</Container>
@@ -108,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) =>
 		root: {
 			display: 'flex',
 			backgroundColor: theme.palette.type == 'light' ? theme.palette.common.white : theme.palette.common.black,
-			overflow: 'hidden'
+			overflow: 'hidden',
 		},
 		content: {
 			marginTop: theme.spacing(10),
@@ -116,11 +85,11 @@ const useStyles = makeStyles((theme: Theme) =>
 			position: 'relative',
 			display: 'flex',
 			flexDirection: 'column',
-			alignItems: 'center'
+			alignItems: 'center',
 		},
 		center: {
-			justifyContent: 'center'
-		}
+			justifyContent: 'center',
+		},
 	})
 );
 
