@@ -15,8 +15,8 @@ const CompanyExpertise: React.FunctionComponent = ({}): JSX.Element => {
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		content: {
-			padding: theme.spacing(8, 0, 6)
-		}
+			padding: theme.spacing(8, 0, 6),
+		},
 	})
 );
 
