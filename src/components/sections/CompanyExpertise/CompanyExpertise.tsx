@@ -9,7 +9,7 @@ const CompanyExpertise: React.FunctionComponent = ({}): JSX.Element => {
 	const classes = useStyles();
 	const i18n = useTranslation('common');
 
-	return <Container id="expertise" maxWidth="sm" component="section" className={classes.content}></Container>;
+	return <Container id="expertise" maxWidth="sm" className={classes.content}></Container>;
 };
 
 const useStyles = makeStyles((theme: Theme) =>
