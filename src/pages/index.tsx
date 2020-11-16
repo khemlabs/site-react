@@ -14,7 +14,6 @@ import CompanyConsole from 'components/sections/CompanyConsole';
 import CompanyProducts from 'components/sections/CompanyProducts';
 import CompanyAbout from 'components/sections/CompanyAbout';
 import CompanyServices from 'components/sections/CompanyServices';
-import CompanyExpertise from 'components/sections/CompanyExpertise';
 import CompanyPortfolio from 'components/sections/CompanyPortfolio';
 import CompanyContact from 'components/sections/CompanyContact';
 import CompanyTeam from 'components/sections/CompanyTeam/CompanyTeam';
@@ -56,7 +55,6 @@ function Index(): JSX.Element {
 				<CompanyTeam />
 				<CompanyServices />
 				<CompanyPortfolio />
-				{/* <CompanyExpertise /> */}
 				<CompanyContact />
 			</Container>
 			<Footer />
