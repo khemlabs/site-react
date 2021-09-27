@@ -36,7 +36,8 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 		{
 			title: i18n.t('menu_legal'),
 			items: [
-				{ title: i18n.t('policy'), link: 'legal/PrivacyPolicy.pdf' }
+				{ title: i18n.t('policy'), link: 'legal/PrivacyPolicy.pdf' },
+				{ title: i18n.t('quality'), link: 'legal/QualityPolicy.pdf' }
 				// { title: 'Terms of use', link: '/terms.pdf' }
 			]
 		}
