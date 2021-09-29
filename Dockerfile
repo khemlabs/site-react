@@ -7,6 +7,7 @@
 FROM node:13 AS builder
 WORKDIR /src/app
 COPY --chown=node:node package.json ./package.json
+COPY --chown=node:node yarn.lock ./yarn.lock
 RUN yarn install && yarn cache clean
 COPY --chown=node:node . .
 RUN yarn build && yarn --production
