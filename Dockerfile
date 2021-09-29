@@ -4,7 +4,7 @@
 ############################################################
 
 # Builder image from full node image
-FROM node:13 AS builder
+FROM node:14 AS builder
 WORKDIR /src/app
 COPY --chown=node:node package.json ./package.json
 COPY --chown=node:node yarn.lock ./yarn.lock
@@ -14,7 +14,7 @@ RUN yarn build && yarn --production
 
 
 # Reduced production version from node alpine
-FROM node:13-alpine
+FROM node:14-alpine
 WORKDIR /app
 COPY --from=builder --chown=node:node /src/app/package.json ./package.json
 COPY --from=builder --chown=node:node /src/app/node_modules ./node_modules
