@@ -22,31 +22,31 @@ const Header: React.FunctionComponent = ({}): JSX.Element => {
 				{ title: i18n.t('menu_team'), link: '#team' },
 				{ title: i18n.t('menu_about'), link: '#about' },
 				{ title: i18n.t('menu_portfolio'), link: '#portfolio' },
-				{ title: i18n.t('menu_technologies'), link: '#expertise' }
-			]
+				{ title: i18n.t('menu_technologies'), link: '#expertise' },
+			],
 		},
 		{
 			title: i18n.t('menu_languajes'),
 			items: [
 				{ title: 'English', link: '/en' },
 				{ title: 'Español', link: '/es' },
-				{ title: '中文', link: '/zh' }
-			]
+				{ title: '中文', link: '/zh' },
+			],
 		},
 		{
 			title: i18n.t('menu_legal'),
 			items: [
 				{ title: i18n.t('policy'), link: 'legal/PrivacyPolicy.pdf' },
-				{ title: i18n.t('quality'), link: 'legal/QualityPolicy.pdf' }
+				{ title: i18n.t('quality'), link: 'legal/QualityPolicy.pdf' },
 				// { title: 'Terms of use', link: '/terms.pdf' }
-			]
-		}
+			],
+		},
 	];
 
 	return (
 		<Container maxWidth="xl" component="footer" className={classes.footer}>
 			<Grid container spacing={4} justify="space-evenly">
-				{footers.map(footer => (
+				{footers.map((footer) => (
 					<Grid item xs={6} sm={3} key={footer.title}>
 						<Typography variant="h6" color="textPrimary" gutterBottom>
 							{footer.title}
@@ -78,11 +78,11 @@ const useStyles = makeStyles((theme: Theme) =>
 			paddingBottom: theme.spacing(3),
 			[theme.breakpoints.up('sm')]: {
 				paddingTop: theme.spacing(6),
-				paddingBottom: theme.spacing(6)
+				paddingBottom: theme.spacing(6),
 			},
 			backgroundColor: theme.palette.type == 'light' ? theme.palette.common.white : theme.palette.common.black,
-			overflow: 'hidden'
-		}
+			overflow: 'hidden',
+		},
 	})
 );
 
